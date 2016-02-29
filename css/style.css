@@ -1,168 +1,70 @@
-/*********************
-  IMPORT
-**********************/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800|Inconsolata:400,700);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 
-/*********************
-  GENERAL
-**********************/
-html,
 body {
-  height: 100%;
+    padding-top: 50px;
+    font-family: "Inconsolata", sans-serif;
+    font-weight: 300;
+    font-size: 2em;
+    position: relative;
+  background-color: #0a489d;
+
 }
 
-/*Logo*/
 #name{
   font-family: "Ubuntu", sans-serif;
   font-size:  4em;
-  color: aquamarine;
+  color: aliceblue;
 }
 
-/*********************
-  LOGIN
-**********************/
-
-.form-signin{
-  max-width: 200px;
-  padding: 1px;
-  margin: 0 auto;
+#eslogan
+{ color: aliceblue;
 }
 
-.btn-block {
-  display: block;
-  width: 90%;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 100;
+    margin: 0;
 }
 
- #icon{
-   text-shadow: none;
-   font-size: 85px;
-   color: rgb(255, 255, 255);
-   height: 93px;
-   width: 93px;
-   line-height: 93px;
-   border-radius: 50%;
-   text-align: center;
-   background-color: rgb(68, 167, 235);
-  margin: 10px;
-}
-
-#contact{
-  max-width: 650px;
-}
-
-/*********************
-  NAVEGACION
-**********************/
-.navbar {
-  background-color: transparent !important;
-}
-
-nav .navbar-brand {
-    background: url(../../img/logo-sm.png);
+header .navbar-brand {
+    background: url(../../img/logo.jpg);
     background-repeat: no-repeat;
-    background-position: 10px 7px;
+    background-position: 10px 10px;
     height: auto;
+
 }
-nav .navbar-brand #textLogo {
-    color: aliceblue;
-    font-size: 1.3em;
+
+header .navbar-brand h1 {
+    color: #3529cc;
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 400;
     padding-left: 60px;
 }
-.top-nav-collapse {
-  background-color: #1C2331 !important;
+
+header .navbar-brand span.subhead {
+    display: block;
+    font-family: "Inconsolata", sans-serif;
+    font-size: .6em;
+    font-weight: 300;
+
 }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #1C2331 !important;
-  }
+footer .navbar-default {
+    background: transparent;
+    border: 0;
 }
 
-/*********************
-  MAIN IMAGE
-**********************/
-.full-bg-img {
-    background: url(../../img/back.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+img {
+    max-width: 200px;
 }
 
-
-footer.page-footer {
-    margin-top: -20px;
+.page {
+    padding: 50px 0;
 }
 
-
-/*********************
-  TEMPLATE COLORS
-**********************/
-.pt-color {
-  background-color: #1C2331 !important;
-}
-
-.st-color {
-  background-color: #4D5668 !important;
-}
-
-.et-color {
-  background-color: #3F729B !important;
-}
-
-.btn-ptc {
-  background-color: #1C2331 !important;
-}
-
-.btn-ptc:hover {
-  background-color: #2f3a51 !important;
-}
-
-.btn-ptc:focus {
-  background-color: #2f3a51 !important;
-}
-
-.btn-stc {
-  background-color: #4D5668 !important;
-}
-
-.btn-stc:hover {
-  background-color: #636e85 !important;
-}
-
-.btn-stc:focus {
-  background-color: #636e85 !important;
-}
-
-.btn-etc {
-  background-color: #3F729B !important;
-}
-
-.btn-etc:hover {
-  background-color: #548cb9 !important;
-}
-
-.btn-etc:focus {
-  background-color: #548cb9 !important;
-}
-
-.fb-bg {
-  background-color: #3B5998;
-}
-
-.tw-bg {
-  background-color: #55ACEE;
-}
-
-.gplus-bg {
-  background-color: #DD4B39;
-}
-
-/*********************
-  FOOTER
-**********************/
-footer.page-footer {
-  margin-top: 0;
-  background-color: #1C2331;
+.page h2 {
+    text-align: center;
+    margin-bottom: 35px;
 }
