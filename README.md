@@ -1,5 +1,6 @@
 #PoliSílabo
->Primer Commit Diseño Index y Contacto Administrador
+>Software utilizando CDN
+>>** Confirmar si los dejamos estaticos **
 
 ##Stack Utilizado
 * BackboneJs
