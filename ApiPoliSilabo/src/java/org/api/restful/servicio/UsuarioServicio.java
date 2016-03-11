@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.api.restful.dao.BaseDeDatos;
 import org.api.restful.modelo.Usuario;
+import org.correo.EnviarCorreo;
 
 public class UsuarioServicio {
  private final List<Usuario> listado = BaseDeDatos.getInstacia().getListado();
+ EnviarCorreo ec = new EnviarCorreo();
 
     /**
      * Metodo que me devuelve todos los Usuarios
@@ -120,4 +122,11 @@ public class UsuarioServicio {
         }
         return -1;
     }   
+    
+    /**
+     * Metodo que envia correo de recuperacion
+     */
+    public void envioCorreo(){
+        ec.enviarCorreo();
+    }
 }

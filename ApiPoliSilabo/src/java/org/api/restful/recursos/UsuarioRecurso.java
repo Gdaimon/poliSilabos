@@ -13,12 +13,15 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import org.api.restful.modelo.Usuario;
 import org.api.restful.servicio.UsuarioServicio;
+import org.correo.EnviarCorreo;
 
 @Path("/usuarios")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UsuarioRecurso {
     
+    
+            
     UsuarioServicio servicio = new UsuarioServicio();
   
      /**
@@ -32,6 +35,7 @@ public class UsuarioRecurso {
         if (user != null &&  user.length()>0) {
             return  servicio.getUsuarioPorUsuario(user);
         }
+  //      ec.enviarCorreo();
         return servicio.getUsuarios();
     }
     
@@ -45,6 +49,13 @@ public class UsuarioRecurso {
     @Path("/{usuarioId}")
     public Usuario getArticulo(@PathParam("usuarioId") int id){
         return servicio.getUsuario(id);
+    }
+    
+    @GET
+    @Path("/enviar")
+    public List<Usuario> getUsuarios(){
+        servicio.envioCorreo();
+        return servicio.getUsuarios();
     }
     
     /**
