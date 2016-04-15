@@ -78,7 +78,6 @@
             <div class="space-30"></div>
             <div class="verticalcenter text-center">
                 <div id="user-list" class="row">
-
                 </div>
             </div>
         </div>
@@ -120,14 +119,14 @@
     <script src="../../js/collections/UsuariosCollection.js"></script>
     <script src="../../js/views/UsuarioListView.js"></script>
     <script type="text/javascript">
-          function htmlEncode(value){
-      return $('<div/>').text(value).html();
+    function htmlEncode(value) {
+        return $('<div/>').text(value).html();
     }
     </script>
     <script type="text/javascript">
     /*
-            Please consider that the JS part isn't production ready at all, I just code it to show the concept of merging filters and titles together !
-            */
+                Please consider that the JS part isn't production ready at all, I just code it to show the concept of merging filters and titles together !
+                */
 
     $(document).ready(function() {
         $('.filterable .btn-filter').click(function() {
@@ -172,54 +171,58 @@
         });
     });
     </script>
-
-  <script type="text/template" id="user-list-template">
-  <div class="panel panel-primary filterable">
-                        <div class="panel-heading">
-                            <div class="pull-left">
-                                <a  href="#/new" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
-                            </div>
-                            <h5>Lista de Usuarios</h5>
-                            <div class="pull-right">
-                                <button class="btn btn-default btn-xs btn-filter">Filtar <span class="glyphicon glyphicon-filter"></span></button>
-                            </div>
-                        </div>
-                        <table class="table">
-                            <thead>
-                                <tr class="filters">
-                                    <th>
-                                        <input type="text" class="form-control text-center" placeholder="#" disabled>
-                                    </th>
-                                    <th>
-                                        <input type="text" class="form-control text-center" placeholder="Nombre" disabled>
-                                    </th>
-                                    <th>
-                                        <input type="text" class="form-control text-center" placeholder="Apellido" disabled>
-                                    </th>
-                                    <th>
-                                        <input type="text" class="form-control text-center" placeholder="Correo" disabled>
-                                    </th>
-                                    <th>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-center">
-                            <% _.each(users, function(user, i) { %>
-                                <tr class="text-center">
-                                    <td><%= i+1%></td>
-                                    <td><%= htmlEncode(user.get('nombre')) %></td>
-                                    <td><%= htmlEncode(user.get('cedula')) %></td>
-                                    <td><%= htmlEncode(user.get('categoria')) %></td>
-                                    <td><a class="btn btn-default btn-xs"href="#/edit/<%= user.id %>" >Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
-                                </tr>
-                                <% }); %>
-                            </tbody>
-                        </table>
-                    </div>
-      </tbody>
-    </table>
-  </script>
-
+    <script type="text/template" id="user-list-template">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <a href="#/new" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>
+                <h5>Lista de Usuarios</h5>
+                <div class="pull-right">
+                    <button class="btn btn-default btn-xs btn-filter">Filtar <span class="glyphicon glyphicon-filter"></span></button>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr class="filters">
+                        <th>
+                            <input type="text" class="form-control text-center" placeholder="#" disabled>
+                        </th>
+                        <th>
+                            <input type="text" class="form-control text-center" placeholder="Nombre" disabled>
+                        </th>
+                        <th>
+                            <input type="text" class="form-control text-center" placeholder="Apellido" disabled>
+                        </th>
+                        <th>
+                            <input type="text" class="form-control text-center" placeholder="Correo" disabled>
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <% _.each(users, function(user, i) { %>
+                        <tr class="text-center">
+                            <td>
+                                <%= i+1%>
+                            </td>
+                            <td>
+                                <%= htmlEncode(user.get('nombre')) %>
+                            </td>
+                            <td>
+                                <%= htmlEncode(user.get('cedula')) %>
+                            </td>
+                            <td>
+                                <%= htmlEncode(user.get('categoria')) %>
+                            </td>
+                            <td><a class="btn btn-default btn-xs" href="#/edit/<%= user.id %>">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
+                        </tr>
+                        <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </script>
 </body>
 
 </html>
