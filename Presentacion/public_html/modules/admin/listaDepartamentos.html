@@ -97,10 +97,9 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="../../js/libs/bootstrap/bootstrap.min.js"></script>
     <!-- Material Design Bootstrap -->
-    <script src="../../js/models/UsuarioModel.js"></script>
-    <script src="../../js/collections/UsuariosCollection.js"></script>
-    <script src="../../js/views/UsuarioListView.js"></script>
-    <script src="../../js/views/UsuarioEditView.js"></script>
+    <script src="../../js/models/DepartamentoModel.js"></script>
+    <script src="../../js/collections/DepartamentoCollection.js"></script>
+    <script src="../../js/views/DepartamentoListView.js"></script>
     <script type="text/javascript">
     function htmlEncode(value) {
 	    return $('<div/>').text(value).html();
@@ -160,7 +159,7 @@
                 <div class="pull-left">
                     <a href="#/new" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
                 </div>
-                <h5>Lista de Usuarios</h5>
+                <h5>Lista de Departamentos</h5>
                 <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter">Filtar <span class="glyphicon glyphicon-filter"></span></button>
                 </div>
@@ -185,21 +184,21 @@
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <% _.each(users, function(user, i) { %>
+                <% _.each(departamentos, function(depto, i) { %>
                         <tr class="text-center">
                             <td>
                                 <%= i+1%>
                             </td>
                             <td>
-                                <%= htmlEncode(user.get('nombre')) %>
+                                <%= htmlEncode(depto.get('nombreDpto')) %>
                             </td>
                             <td>
-                                <%= htmlEncode(user.get('cedula')) %>
+                                <%= htmlEncode(depto.get('nombreFacultad')) %>
                             </td>
                             <td>
-                                <%= htmlEncode(user.get('categoria')) %>
+                                <%= htmlEncode(depto.get('sedeFacultad')) %>
                             </td>
-                            <td><a class="btn btn-default btn-xs" href="#/edit/<%= user.id %>">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
+                            <td><a class="btn btn-default btn-xs" href="#/edit/<%= depto.id %>">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
                         </tr>
                         <% }); %>
                 </tbody>

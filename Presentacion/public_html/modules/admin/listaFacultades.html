@@ -97,10 +97,9 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="../../js/libs/bootstrap/bootstrap.min.js"></script>
     <!-- Material Design Bootstrap -->
-    <script src="../../js/models/UsuarioModel.js"></script>
-    <script src="../../js/collections/UsuariosCollection.js"></script>
-    <script src="../../js/views/UsuarioListView.js"></script>
-    <script src="../../js/views/UsuarioEditView.js"></script>
+    <script src="../../js/models/FacultadModel.js"></script>
+    <script src="../../js/collections/FacultadCollection.js"></script>
+    <script src="../../js/views/FacultadListView.js"></script>
     <script type="text/javascript">
     function htmlEncode(value) {
 	    return $('<div/>').text(value).html();
@@ -160,7 +159,7 @@
                 <div class="pull-left">
                     <a href="#/new" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
                 </div>
-                <h5>Lista de Usuarios</h5>
+                <h5>Lista de Facultades</h5>
                 <div class="pull-right">
                     <button class="btn btn-default btn-xs btn-filter">Filtar <span class="glyphicon glyphicon-filter"></span></button>
                 </div>
@@ -172,34 +171,28 @@
                             <input type="text" class="form-control text-center" placeholder="#" disabled>
                         </th>
                         <th>
-                            <input type="text" class="form-control text-center" placeholder="Nombre" disabled>
+                            <input type="text" class="form-control text-center" placeholder="Nombre Facultad" disabled>
                         </th>
                         <th>
-                            <input type="text" class="form-control text-center" placeholder="Apellido" disabled>
-                        </th>
-                        <th>
-                            <input type="text" class="form-control text-center" placeholder="Correo" disabled>
+                            <input type="text" class="form-control text-center" placeholder="Sede Facultad" disabled>
                         </th>
                         <th>
                         </th>
                     </tr>
                 </thead>
                 <tbody class="text-center">
-                    <% _.each(users, function(user, i) { %>
+                <% _.each(facultades, function(facultad, i) { %>
                         <tr class="text-center">
                             <td>
                                 <%= i+1%>
                             </td>
                             <td>
-                                <%= htmlEncode(user.get('nombre')) %>
+                                <%= htmlEncode(facultad.get('nombreFacultad')) %>
                             </td>
                             <td>
-                                <%= htmlEncode(user.get('cedula')) %>
+                                <%= htmlEncode(facultad.get('sedeFacultad')) %>
                             </td>
-                            <td>
-                                <%= htmlEncode(user.get('categoria')) %>
-                            </td>
-                            <td><a class="btn btn-default btn-xs" href="#/edit/<%= user.id %>">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
+                            <td><a class="btn btn-default btn-xs" href="#/edit/<%= facultad.id %>">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></a></td>
                         </tr>
                         <% }); %>
                 </tbody>
