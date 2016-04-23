@@ -7,6 +7,7 @@ package org.api.data.service;
 import org.api.data.Docente;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.faces.bean.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.DefaultValue;
