@@ -1,7 +1,7 @@
 #PoliSílabo
 >Conexión Base de Datos
 >-------------
-1. Ir a la pestaña Pretaciones en NetBeans  
+1. Ir a la pestaña Prestaciones (Services) en NetBeans  
 2. Seleccionar Icono Base de Datos  
 3. Click derecho sobre el Icono y Seleccionar Nueva conexión a base de datos
 4. Damos Click en Driver y seleccionamos PostgreSql
