@@ -14,6 +14,8 @@
 11. Seleccionamos el schema a utilizar, en mi caso 'public'
 12. **Siguiente**...
 13. **Terminar**... y listo ya se efectuo la conexión a la base de datos
+14. Configurar el Archivo persistence.xml (Este Archivo ya fue modificado, pero si presentan inconvenientes con el Deploy) hacer lo siguiente:  
+Ir a Configuration File ==> persistence.xml y en Fuente de datos agregar el nombre de la base de datos (polisilabo)
 
 ##Stack Utilizado
 * BackboneJs
