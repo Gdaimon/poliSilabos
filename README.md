@@ -11,7 +11,7 @@
 8. Ingresamos la contraseña de la base de datos en mi caso 'polisilabo'
 9. Realizamos la prueba de la base de datos dando click en **Probar Conexión** nos debara indicar *Connection Succeeded*
 10. Si nos salio el mensaje *Connection Succeeded* podemos dar click en **Siguiente**...
-11. Seleccionamos el squema a utilizar, en mi caso 'public'
+11. Seleccionamos el schema a utilizar, en mi caso 'public'
 12. **Siguiente**...
 13. **Terminar**... y listo ya se efectuo la conexión a la base de datos
 
