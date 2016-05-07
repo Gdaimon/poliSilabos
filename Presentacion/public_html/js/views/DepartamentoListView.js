@@ -7,6 +7,8 @@ var DepartamentoListView = Backbone.View.extend({
             success: function (departamentos) {
                 var template = _.template($('#user-list-template').html(), {departamentos: departamentos.models});
                 that.$el.html(template);
+                $('#listar-docente-table').DataTable();
+
             }
         })
     }
