@@ -1,0 +1,3 @@
+Para tener en cuenta, ya están creados los scripts de inserción de las tablas a excepción de: par_titulos, par_objectivos y par_ejes debido a que tengo que solucionar con Carlos un tema del modelo relacional, aún no corran los scripts en sus bases dado que esto es susceptible a cambios según lo que se discuta hoy con Carlos, de resto todo funciona acorde a lo actual si los quieren probar y trabajar
+Revisar nueva carpeta "MODELO ACTUAL" del anexo de BD.
+Tener en cuenta la ejecución en su orden respectivo, si ya crearon el rol y la BD solo empiecen desde la creación de las tablas.
