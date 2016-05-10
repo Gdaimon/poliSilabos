@@ -1,1 +1,0 @@
-La ejecución de todos los querys se debe hacer en el orden establecido
