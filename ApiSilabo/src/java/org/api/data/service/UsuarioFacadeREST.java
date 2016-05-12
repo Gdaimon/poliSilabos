@@ -27,7 +27,7 @@ import org.api.data.ParUsuarios;
 @Consumes(MediaType.APPLICATION_JSON)
 public class UsuarioFacadeREST  extends AbstractFacade<ParUsuarios>{
     
-    @PersistenceContext(unitName = "ApiSilaboPU") 
+    @PersistenceContext(unitName = "ApisilaboPU") 
     private EntityManager em;
 
     public UsuarioFacadeREST() {

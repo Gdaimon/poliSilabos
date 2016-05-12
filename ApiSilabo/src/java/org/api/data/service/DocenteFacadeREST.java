@@ -31,7 +31,7 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 @Consumes(MediaType.APPLICATION_JSON)
 public class DocenteFacadeREST extends AbstractFacade<Docente> {
-    @PersistenceContext(unitName = "ApiSilaboPU") 
+    @PersistenceContext(unitName = "ApisilaboPU") 
     private EntityManager em;
 
     public DocenteFacadeREST() {

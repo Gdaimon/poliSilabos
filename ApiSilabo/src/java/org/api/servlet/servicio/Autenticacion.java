@@ -25,7 +25,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "Autenticacion", urlPatterns = {"/Autenticacion"})
 public class Autenticacion extends HttpServlet {
-    @PersistenceContext(unitName = "ApiPoliSilaboPU")
+    @PersistenceContext(unitName = "ApisilaboPU")
     private EntityManager em;
     @Resource
     private javax.transaction.UserTransaction utx;
