@@ -1,14 +1,10 @@
 ##Creacion Base de Datos  
->La ejecución de todos los querys se debe hacer en el orden establecido:
+>Ejecutar solamente este query y el se encarga de crear:
+>
+1.  Rol
+2.  Base de Datos
+3.  Insertar Datos
 >
 ~~~
-Create Rol polisilabo.sql 
-Create DB polisilabo.sql 
-Create Tables PoliSilabo.sql  
-Insert par_usuarios OK.sql  
-Insert par_facultad OK.sql  
-Insert par_departamento OK.sql  
-Insert par_materias OK.sql
-Insert par_competencia OK.sql  
-Insert par_par_nucle_tematico OK.sql
+scriptCorregido.sql
 ~~~
