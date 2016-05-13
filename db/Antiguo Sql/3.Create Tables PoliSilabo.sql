@@ -8,7 +8,6 @@
   email text NOT NULL,
   password text NOT NULL,
   perfil integer NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_usuario boolean NOT NULL DEFAULT TRUE
   )
@@ -23,7 +22,6 @@ CREATE TABLE public.par_facultad
   id SERIAL PRIMARY KEY,
   nombre_facultad text NOT NULL,
   ciudad_facultad text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_facultad boolean NOT NULL DEFAULT TRUE
 )
@@ -32,14 +30,13 @@ WITH (
 );
 ALTER TABLE public.par_facultad
   OWNER TO polisilabo;
-  
+
 CREATE TABLE public.par_departamento
 (
   id SERIAL PRIMARY KEY,
   id_facultad integer references par_facultad(id),
   nombre_departamento text NOT NULL,
   ciudad_departamento text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_departamento boolean NOT NULL DEFAULT TRUE
   )
@@ -48,7 +45,7 @@ WITH (
 );
 ALTER TABLE public.par_departamento
   OWNER TO polisilabo;
-  
+
 CREATE TABLE public.par_materias
 (
   id SERIAL PRIMARY KEY,
@@ -60,7 +57,6 @@ CREATE TABLE public.par_materias
   no_creditos integer NOT NULL,
   duracion text NOT NULL,
   tipo_asignatura text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_materia boolean NOT NULL DEFAULT TRUE
   )
@@ -69,13 +65,12 @@ WITH (
 );
 ALTER TABLE public.par_materias
   OWNER TO polisilabo;
-  
+
 CREATE TABLE public.par_competencia
 (
   id SERIAL PRIMARY KEY,
   cod_competencia integer,
   descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_competencia boolean NOT NULL DEFAULT TRUE
   )
@@ -84,13 +79,12 @@ WITH (
 );
 ALTER TABLE public.par_competencia
   OWNER TO polisilabo;
-  
+
 CREATE TABLE public.par_nucleo_tematico
 (
   id SERIAL PRIMARY KEY,
   cod_materia integer references par_materias(cod_materia),
   descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_nucleo boolean NOT NULL DEFAULT TRUE
 )
@@ -99,13 +93,12 @@ WITH (
 );
 ALTER TABLE public.par_nucleo_tematico
   OWNER TO polisilabo;
-  
+
 CREATE TABLE public.par_titulo
 (
   id SERIAL PRIMARY KEY,
   cod_materia integer references par_materias(cod_materia),
   descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id)  NOT NULL,
   fecha_creacion date NOT NULL,
   estado_nucleo boolean NOT NULL DEFAULT TRUE
 )
@@ -114,13 +107,12 @@ WITH (
 );
 ALTER TABLE public.par_titulo
   OWNER TO polisilabo;
-  
+
 CREATE TABLE public.par_objetivo
 (
   id SERIAL PRIMARY KEY,
   cod_materia integer references par_materias(cod_materia),
   descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id)  NOT NULL,
   fecha_creacion date NOT NULL,
   estado_nucleo boolean NOT NULL DEFAULT TRUE
 )
@@ -135,7 +127,6 @@ CREATE TABLE public.par_eje
   id SERIAL PRIMARY KEY,
   cod_materia integer references par_materias(cod_materia),
   descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id)  NOT NULL,
   fecha_creacion date NOT NULL,
   estado_nucleo boolean NOT NULL DEFAULT TRUE
  )

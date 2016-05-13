@@ -1,6 +1,5 @@
 package org.api.data.service;
 
-import org.api.data.Docente;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -16,46 +15,47 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.api.data.ParEje;
 
 /**
  *
  * @author DarkKlitos
  */
 @Stateless
-@Path("/docente")
+@Path("/eje")
 @Produces(MediaType.APPLICATION_JSON + ";charset=UTF-8")
 @Consumes(MediaType.APPLICATION_JSON)
-public class DocenteFacadeREST extends AbstractFacade<Docente> {
+public class EjeFacadeREST extends AbstractFacade<ParEje> {
     @PersistenceContext(unitName = "ApisilaboPU") 
     private EntityManager em;
 
-    public DocenteFacadeREST() {
-        super(Docente.class);
+    public EjeFacadeREST() {
+        super(ParEje.class);
     }
 
     /**
-     * Metodo que crea en la db un Docente
+     * Metodo que crea en la db un Eje
      * @param entity 
      */
     @POST
     @Override
-    public void create(Docente entity) {
+    public void create(ParEje entity) {
         super.create(entity);
     }
 
     /**
-     * Metodo que modifica un Docente en la db
+     * Metodo que modifica un Eje en la db
      * @param id
      * @param entity 
      */
     @PUT
     @Path("{id}")
-    public void edit(@PathParam("id") int id, Docente entity) {
+    public void edit(@PathParam("id") int id, ParEje entity) {
         super.edit(entity);
     }
 
     /**
-     * Metodo que elimina un Docente de la db
+     * Metodo que elimina un Eje de la db
      * @param id 
      */
     @DELETE
@@ -65,28 +65,28 @@ public class DocenteFacadeREST extends AbstractFacade<Docente> {
     }
 
     /**
-     * Metodo que busca un Docente por su id en la db
+     * Metodo que busca un Eje por su id en la db
      * @param id
      * @return 
      */
     @GET
     @Path("{id}")
-    public Docente find(@PathParam("id") int id) {
+    public ParEje find(@PathParam("id") int id) {
         return super.find(id);
     }
 
     /**
-     * Metodo que retorna todos los Docentes de la db
+     * Metodo que retorna todos los Eje de la db
      * @return 
      */
     @GET
     @Override
-    public List<Docente> findAll() {
+    public List<ParEje> findAll() {
         return super.findAll();
     }
 
     /**
-     * Metodo que realiza la busqueda de uno o varios docentes por sus atributos
+     * Metodo que realiza la busqueda de uno o varios Ejes por sus atributos
      * @param cedula
      * @param nombre
      * @param categoria
@@ -94,14 +94,14 @@ public class DocenteFacadeREST extends AbstractFacade<Docente> {
      */
     @GET
     @Path("buscar")
-    public List<Docente> search(
+    public List<ParEje> search(
         @DefaultValue("") @QueryParam("cedula") String cedula,
         @DefaultValue("") @QueryParam("nombre") String nombre,
         @DefaultValue("") @QueryParam("categoria") String categoria
 //        @DefaultValue("") @QueryParam("id") int id
     ) {
         // Returns a list of teacher filterd by GET parameters.
-        return em.createNamedQuery("Docente.findByParams")
+        return em.createNamedQuery("ParEje.findByParams")
             .setParameter("cedula", "%" + cedula + "%")
             .setParameter("nombre", "%" + nombre + "%")
             .setParameter("categoria", "%" + categoria + "%")
@@ -110,14 +110,14 @@ public class DocenteFacadeREST extends AbstractFacade<Docente> {
     }
 
     /**
-     * Metodo que realizar la busqueda de varios docentes indicandoles un limite superior e inferior
+     * Metodo que realizar la busqueda de varios Ejes indicandoles un limite superior e inferior
      * @param from
      * @param to
      * @return 
      */
     @GET
     @Path("{from}/{to}")
-    public List<Docente> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
+    public List<ParEje> findRange(@PathParam("from") Integer from, @PathParam("to") Integer to) {
         return super.findRange(new int[]{from, to});
     }
 

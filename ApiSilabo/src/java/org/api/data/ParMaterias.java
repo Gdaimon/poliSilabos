@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.api.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -101,16 +94,13 @@ public class ParMaterias implements Serializable {
     @Column(name = "estado_materia")
     private boolean estadoMateria;
     @OneToMany(mappedBy = "codMateria")
-    private List<ParEje> parEjeList;
-    @JoinColumn(name = "id_creador", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private ParUsuarios idCreador;
+    private Collection<ParEje> parEjeCollection;
     @OneToMany(mappedBy = "codMateria")
-    private List<ParNucleoTematico> parNucleoTematicoList;
+    private Collection<ParNucleoTematico> parNucleoTematicoCollection;
     @OneToMany(mappedBy = "codMateria")
-    private List<ParTitulo> parTituloList;
+    private Collection<ParTitulo> parTituloCollection;
     @OneToMany(mappedBy = "codMateria")
-    private List<ParObjetivo> parObjetivoList;
+    private Collection<ParObjetivo> parObjetivoCollection;
 
     public ParMaterias() {
     }
@@ -221,47 +211,39 @@ public class ParMaterias implements Serializable {
     }
 
     @XmlTransient
-    public List<ParEje> getParEjeList() {
-        return parEjeList;
+    public Collection<ParEje> getParEjeCollection() {
+        return parEjeCollection;
     }
 
-    public void setParEjeList(List<ParEje> parEjeList) {
-        this.parEjeList = parEjeList;
-    }
-
-    public ParUsuarios getIdCreador() {
-        return idCreador;
-    }
-
-    public void setIdCreador(ParUsuarios idCreador) {
-        this.idCreador = idCreador;
+    public void setParEjeCollection(Collection<ParEje> parEjeCollection) {
+        this.parEjeCollection = parEjeCollection;
     }
 
     @XmlTransient
-    public List<ParNucleoTematico> getParNucleoTematicoList() {
-        return parNucleoTematicoList;
+    public Collection<ParNucleoTematico> getParNucleoTematicoCollection() {
+        return parNucleoTematicoCollection;
     }
 
-    public void setParNucleoTematicoList(List<ParNucleoTematico> parNucleoTematicoList) {
-        this.parNucleoTematicoList = parNucleoTematicoList;
-    }
-
-    @XmlTransient
-    public List<ParTitulo> getParTituloList() {
-        return parTituloList;
-    }
-
-    public void setParTituloList(List<ParTitulo> parTituloList) {
-        this.parTituloList = parTituloList;
+    public void setParNucleoTematicoCollection(Collection<ParNucleoTematico> parNucleoTematicoCollection) {
+        this.parNucleoTematicoCollection = parNucleoTematicoCollection;
     }
 
     @XmlTransient
-    public List<ParObjetivo> getParObjetivoList() {
-        return parObjetivoList;
+    public Collection<ParTitulo> getParTituloCollection() {
+        return parTituloCollection;
     }
 
-    public void setParObjetivoList(List<ParObjetivo> parObjetivoList) {
-        this.parObjetivoList = parObjetivoList;
+    public void setParTituloCollection(Collection<ParTitulo> parTituloCollection) {
+        this.parTituloCollection = parTituloCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParObjetivo> getParObjetivoCollection() {
+        return parObjetivoCollection;
+    }
+
+    public void setParObjetivoCollection(Collection<ParObjetivo> parObjetivoCollection) {
+        this.parObjetivoCollection = parObjetivoCollection;
     }
 
     @Override

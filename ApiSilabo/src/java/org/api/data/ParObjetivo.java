@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.api.data;
 
 import java.io.Serializable;
@@ -62,9 +57,6 @@ public class ParObjetivo implements Serializable {
     @JoinColumn(name = "cod_materia", referencedColumnName = "cod_materia")
     @ManyToOne
     private ParMaterias codMateria;
-    @JoinColumn(name = "id_creador", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private ParUsuarios idCreador;
 
     public ParObjetivo() {
     }
@@ -118,14 +110,6 @@ public class ParObjetivo implements Serializable {
 
     public void setCodMateria(ParMaterias codMateria) {
         this.codMateria = codMateria;
-    }
-
-    public ParUsuarios getIdCreador() {
-        return idCreador;
-    }
-
-    public void setIdCreador(ParUsuarios idCreador) {
-        this.idCreador = idCreador;
     }
 
     @Override

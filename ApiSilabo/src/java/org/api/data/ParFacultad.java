@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.api.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -69,10 +62,7 @@ public class ParFacultad implements Serializable {
     @Column(name = "estado_facultad")
     private boolean estadoFacultad;
     @OneToMany(mappedBy = "idFacultad")
-    private List<ParDepartamento> parDepartamentoList;
-    @JoinColumn(name = "id_creador", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private ParUsuarios idCreador;
+    private Collection<ParDepartamento> parDepartamentoCollection;
 
     public ParFacultad() {
     }
@@ -130,20 +120,12 @@ public class ParFacultad implements Serializable {
     }
 
     @XmlTransient
-    public List<ParDepartamento> getParDepartamentoList() {
-        return parDepartamentoList;
+    public Collection<ParDepartamento> getParDepartamentoCollection() {
+        return parDepartamentoCollection;
     }
 
-    public void setParDepartamentoList(List<ParDepartamento> parDepartamentoList) {
-        this.parDepartamentoList = parDepartamentoList;
-    }
-
-    public ParUsuarios getIdCreador() {
-        return idCreador;
-    }
-
-    public void setIdCreador(ParUsuarios idCreador) {
-        this.idCreador = idCreador;
+    public void setParDepartamentoCollection(Collection<ParDepartamento> parDepartamentoCollection) {
+        this.parDepartamentoCollection = parDepartamentoCollection;
     }
 
     @Override

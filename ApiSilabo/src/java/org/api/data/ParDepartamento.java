@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.api.data;
 
 import java.io.Serializable;
@@ -48,12 +43,12 @@ public class ParDepartamento implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 2147483647)
+    @Size(min = 1, max = 255)
     @Column(name = "nombre_departamento")
     private String nombreDepartamento;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 2147483647)
+    @Size(min = 1, max = 255)
     @Column(name = "ciudad_departamento")
     private String ciudadDepartamento;
     @Basic(optional = false)
@@ -68,9 +63,6 @@ public class ParDepartamento implements Serializable {
     @JoinColumn(name = "id_facultad", referencedColumnName = "id")
     @ManyToOne
     private ParFacultad idFacultad;
-    @JoinColumn(name = "id_creador", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private ParUsuarios idCreador;
 
     public ParDepartamento() {
     }
@@ -133,14 +125,6 @@ public class ParDepartamento implements Serializable {
 
     public void setIdFacultad(ParFacultad idFacultad) {
         this.idFacultad = idFacultad;
-    }
-
-    public ParUsuarios getIdCreador() {
-        return idCreador;
-    }
-
-    public void setIdCreador(ParUsuarios idCreador) {
-        this.idCreador = idCreador;
     }
 
     @Override

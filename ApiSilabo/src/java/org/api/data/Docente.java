@@ -23,9 +23,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "Docente.findAll", query = "SELECT d FROM Docente d"),
     @NamedQuery(name = "Docente.findById", query = "SELECT d FROM Docente d WHERE d.id = :id"),
+    @NamedQuery(name = "Docente.findByCategoria", query = "SELECT d FROM Docente d WHERE d.categoria = :categoria"),
     @NamedQuery(name = "Docente.findByCedula", query = "SELECT d FROM Docente d WHERE d.cedula = :cedula"),
-    @NamedQuery(name = "Docente.findByNombre", query = "SELECT d FROM Docente d WHERE d.nombre = :nombre"),
-    @NamedQuery(name = "Docente.findByCategoria", query = "SELECT d FROM Docente d WHERE d.categoria = :categoria")})
+    @NamedQuery(name = "Docente.findByNombre", query = "SELECT d FROM Docente d WHERE d.nombre = :nombre")})
 public class Docente implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -34,15 +34,15 @@ public class Docente implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Size(max = 20)
-    @Column(name = "cedula")
-    private String cedula;
-    @Size(max = 50)
-    @Column(name = "nombre")
-    private String nombre;
-    @Size(max = 15)
+    @Size(max = 255)
     @Column(name = "categoria")
     private String categoria;
+    @Size(max = 255)
+    @Column(name = "cedula")
+    private String cedula;
+    @Size(max = 255)
+    @Column(name = "nombre")
+    private String nombre;
 
     public Docente() {
     }
@@ -59,6 +59,14 @@ public class Docente implements Serializable {
         this.id = id;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     public String getCedula() {
         return cedula;
     }
@@ -73,14 +81,6 @@ public class Docente implements Serializable {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
     }
 
     @Override

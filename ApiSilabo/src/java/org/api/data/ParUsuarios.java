@@ -1,32 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.api.data;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -96,27 +85,6 @@ public class ParUsuarios implements Serializable {
     @NotNull
     @Column(name = "estado_usuario")
     private boolean estadoUsuario;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParUsuarios> parUsuariosList;
-    @JoinColumn(name = "id_creador", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private ParUsuarios idCreador;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParCompetencia> parCompetenciaList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParEje> parEjeList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParMaterias> parMateriasList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParNucleoTematico> parNucleoTematicoList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParTitulo> parTituloList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParDepartamento> parDepartamentoList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParFacultad> parFacultadList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idCreador")
-    private List<ParObjetivo> parObjetivoList;
 
     public ParUsuarios() {
     }
@@ -215,95 +183,6 @@ public class ParUsuarios implements Serializable {
 
     public void setEstadoUsuario(boolean estadoUsuario) {
         this.estadoUsuario = estadoUsuario;
-    }
-
-    @XmlTransient
-    public List<ParUsuarios> getParUsuariosList() {
-        return parUsuariosList;
-    }
-
-    public void setParUsuariosList(List<ParUsuarios> parUsuariosList) {
-        this.parUsuariosList = parUsuariosList;
-    }
-
-    public ParUsuarios getIdCreador() {
-        return idCreador;
-    }
-
-    public void setIdCreador(ParUsuarios idCreador) {
-        this.idCreador = idCreador;
-    }
-
-    @XmlTransient
-    public List<ParCompetencia> getParCompetenciaList() {
-        return parCompetenciaList;
-    }
-
-    public void setParCompetenciaList(List<ParCompetencia> parCompetenciaList) {
-        this.parCompetenciaList = parCompetenciaList;
-    }
-
-    @XmlTransient
-    public List<ParEje> getParEjeList() {
-        return parEjeList;
-    }
-
-    public void setParEjeList(List<ParEje> parEjeList) {
-        this.parEjeList = parEjeList;
-    }
-
-    @XmlTransient
-    public List<ParMaterias> getParMateriasList() {
-        return parMateriasList;
-    }
-
-    public void setParMateriasList(List<ParMaterias> parMateriasList) {
-        this.parMateriasList = parMateriasList;
-    }
-
-    @XmlTransient
-    public List<ParNucleoTematico> getParNucleoTematicoList() {
-        return parNucleoTematicoList;
-    }
-
-    public void setParNucleoTematicoList(List<ParNucleoTematico> parNucleoTematicoList) {
-        this.parNucleoTematicoList = parNucleoTematicoList;
-    }
-
-    @XmlTransient
-    public List<ParTitulo> getParTituloList() {
-        return parTituloList;
-    }
-
-    public void setParTituloList(List<ParTitulo> parTituloList) {
-        this.parTituloList = parTituloList;
-    }
-
-    @XmlTransient
-    public List<ParDepartamento> getParDepartamentoList() {
-        return parDepartamentoList;
-    }
-
-    public void setParDepartamentoList(List<ParDepartamento> parDepartamentoList) {
-        this.parDepartamentoList = parDepartamentoList;
-    }
-
-    @XmlTransient
-    public List<ParFacultad> getParFacultadList() {
-        return parFacultadList;
-    }
-
-    public void setParFacultadList(List<ParFacultad> parFacultadList) {
-        this.parFacultadList = parFacultadList;
-    }
-
-    @XmlTransient
-    public List<ParObjetivo> getParObjetivoList() {
-        return parObjetivoList;
-    }
-
-    public void setParObjetivoList(List<ParObjetivo> parObjetivoList) {
-        this.parObjetivoList = parObjetivoList;
     }
 
     @Override

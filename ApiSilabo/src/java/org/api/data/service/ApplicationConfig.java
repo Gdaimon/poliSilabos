@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.api.data.service;
 
 import java.util.Set;
@@ -30,17 +25,12 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(org.api.data.service.CrossOriginResourceSharingFilter.class);
-//        resources.add(edu.poli.prap.gd.data.service.DepartamentoFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.DetalleExperienciaFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.EscolaridadFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.ExperienciaFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.MateriasFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.PaisFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.ProfesorFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.TarjetaProfesionalFacadeREST.class);
-//        resources.add(edu.poli.prap.gd.data.service.TituloFacadeREST.class);
+        resources.add(org.api.data.service.DepartamentoFacadeREST.class);
         resources.add(org.api.data.service.DocenteFacadeREST.class);
-        resources.add(org.api.data.service.UsuarioFacadeREST.class);
+        resources.add(org.api.data.service.EjeFacadeREST.class);
+        resources.add(org.api.data.service.FacultadFacadeREST.class);
+        resources.add(org.api.data.service.MateriaFacadeREST.class);
+        resources.add(org.api.data.service.UsuariosFacadeREST.class);
     }
 
 }
