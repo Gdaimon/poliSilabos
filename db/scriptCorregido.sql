@@ -1676,7 +1676,7 @@ values
 
 --Tabla par_nucleo_tematico
 INSERT INTO par_nucleo_tematico(
-	"id_materia",
+	"cod_materia",
 	"descripcion",
 	"fecha_creacion",
 	"estado_nucleo"
