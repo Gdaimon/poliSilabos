@@ -3,7 +3,8 @@
 >
 1.  Rol
 2.  Base de Datos
-3.  Insertar Datos
+3.  Tablas
+4.  Insertar Datos
 >
 ~~~
 scriptCorregido.sql
