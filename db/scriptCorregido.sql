@@ -1,10 +1,3 @@
---Creacion Rol
---password=123456
-CREATE ROLE polisilabo LOGIN ENCRYPTED PASSWORD 'md5b408f1d39791937bdf4e67befcab82fc' SUPERUSER CREATEDB CREATEROLE REPLICATION VALID UNTIL 'infinity';
-
---Creacion Base de Datos
-CREATE DATABASE polisilabo WITH OWNER = polisilabo;
-
 --Creacion de las Tablas
 CREATE TABLE public .par_usuarios(
 	id SERIAL PRIMARY KEY,
