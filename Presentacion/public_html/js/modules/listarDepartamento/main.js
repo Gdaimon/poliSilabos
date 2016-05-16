@@ -21,7 +21,7 @@ require.config({
 require([
     // Load our app module and pass it to our definition function
     // 'modules/docente/app'
-    'modules/docente/app'
+    'modules/departamento/app'
 
 ], function (App) {
     // The "app" dependency is passed in as "App"
