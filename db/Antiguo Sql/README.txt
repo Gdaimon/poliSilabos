@@ -6,7 +6,7 @@ VER CAMBIOS EN "3.Create Tables PoliSilabo.sql"
 
 2. Se creó la tabla muchos a muchos par_nucleo_eje, esta tabla relaciona los nucleos con sus respectivos ejes.
 
-3. Se creó la tabla muchos a muchos par_nucleo_onjectivo, esta tabla relaciona los nucleos con sus respectivos onjectivos.
+3. Se creó la tabla muchos a muchos par_nucleo_objetivo, esta tabla relaciona los nucleos con sus respectivos onjectivos.
 
 4. Se creó la tabla par_silabo la cual contendrá toda la información de un silabo
 
