@@ -1,6 +1,6 @@
 Quedó solucionado el tema del modelo entidad relación, se realizaron los siguientes ajustes:
 
-VER CAMBIOS EN "3.Create Tables PoliSilabo.sql"
+VER CAMBIOS EN "3.Create Tables PoliSilabo.sql":
 
 1.La tabla par_titulo se eliminó dado que hace referencia al titulo del núcleo tematico, en su contraparte se cambió el nombre de la columna par_nucleo_tematico(descripcion) por par_nucleo_tematico(nombre), esta columna hace referencia a lo que "hacía" par_titulo.
 
