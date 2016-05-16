@@ -1,15 +1,16 @@
-    var UserListView = Backbone.View.extend({
+    var MateriaListView = Backbone.View.extend({
       el: '#user-list',
       render: function () {
         var that = this;
-        var users = new UsuariosCollection();
-        users.fetch({
-          success: function (users) {
-            var template = _.template($('#user-list-template').html(), {users: users.models});
+        var materias = new MateriaCollection();
+        materias.fetch({
+          success: function (materias) {
+            var template = _.template($('#user-list-template').html(), {materias: materias.models});
             that.$el.html(template);
+             $('#listar-docente-table').DataTable();
           }
         })
       }
     });
-    var userListView = new UserListView();
-    userListView.render();
+    var materiaListView = new MateriaListView();
+    materiaListView.render();

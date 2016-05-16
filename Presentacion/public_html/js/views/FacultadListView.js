@@ -7,6 +7,7 @@ var FacultadListView = Backbone.View.extend({
             success: function (facultades) {
                 var template = _.template($('#user-list-template').html(), {facultades: facultades.models});
                 that.$el.html(template);
+                $('#listar-docente-table').DataTable();
             }
         })
     }
