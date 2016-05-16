@@ -125,7 +125,7 @@ ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_silabo_nucleo ( --Tabla Silabo X Núcleo Temático
   silabo integer references par_silabo(id) NOT NULL,
-  nucleoTematico integer references par_competencia(id) NOT NULL
+  nucleoTematico integer references par_nucleo_tematico(id) NOT NULL
 ) WITH (OIDS=FALSE);
 
 ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
