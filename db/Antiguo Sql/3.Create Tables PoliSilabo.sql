@@ -1,6 +1,5 @@
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_usuarios --Tabla Usuarios
-(
+CREATE TABLE public.par_usuarios ( --Tabla Usuarios
   id SERIAL PRIMARY KEY,
   id_usuario integer UNIQUE,
   tipo_cedula text NOT NULL,
@@ -11,46 +10,32 @@ CREATE TABLE public.par_usuarios --Tabla Usuarios
   perfil integer NOT NULL,
   fecha_creacion date NOT NULL,
   estado_usuario boolean NOT NULL DEFAULT TRUE
-  )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_usuarios
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_usuarios OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_facultad --Tabla Facultad
-(
+CREATE TABLE public.par_facultad ( --Tabla Facultad
   id SERIAL PRIMARY KEY,
   nombre_facultad text NOT NULL,
   ciudad_facultad text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_facultad boolean NOT NULL DEFAULT TRUE
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_facultad
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_facultad OWNER TO polisilabo;
 -----------------------------------------------------------------------------  
-CREATE TABLE public.par_departamento --Tabla Departamento
-(
+CREATE TABLE public.par_departamento ( --Tabla Departamento
   id SERIAL PRIMARY KEY,
   id_facultad integer references par_facultad(id) NOT NULL,
   nombre_departamento text NOT NULL,
   ciudad_departamento text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_departamento boolean NOT NULL DEFAULT TRUE
-  )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_departamento
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_departamento OWNER TO polisilabo;
 -----------------------------------------------------------------------------  
-CREATE TABLE public.par_materias --Tabla Materias
-(
+CREATE TABLE public.par_materias ( --Tabla Materias
   id SERIAL PRIMARY KEY,
   cod_materia integer UNIQUE NOT NULL,
   nombre text NOT NULL,
@@ -60,135 +45,92 @@ CREATE TABLE public.par_materias --Tabla Materias
   no_creditos integer NOT NULL,
   duracion text NOT NULL,
   tipo_asignatura text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_materia boolean NOT NULL DEFAULT TRUE
-  )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_materias
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_materias OWNER TO polisilabo;
 -----------------------------------------------------------------------------  
-CREATE TABLE public.par_competencia --Tabla Competencia
-(
+CREATE TABLE public.par_competencia ( --Tabla Competencia
   id SERIAL PRIMARY KEY,
   cod_competencia integer NOT NULL,
   descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_competencia boolean NOT NULL DEFAULT TRUE
-  )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_competencia
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_competencia OWNER TO polisilabo;
 -----------------------------------------------------------------------------  
-CREATE TABLE public.par_nucleo_tematico --Tabla Núcleo Tematico
-(
+CREATE TABLE public.par_nucleo_tematico ( --Tabla Núcleo Tematico
   id SERIAL PRIMARY KEY,
   nombre text NOT NULL,
   cod_materia integer references par_materias(cod_materia) NOT NULL,
-  id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_nucleo boolean NOT NULL DEFAULT TRUE
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_nucleo_tematico
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_nucleo_tematico OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_eje --Tabla Eje
-(
+CREATE TABLE public.par_eje ( --Tabla Eje
   id SERIAL PRIMARY KEY,
   cod_materia integer references par_materias(cod_materia) NOT NULL,
   descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id)  NOT NULL,
   fecha_creacion date NOT NULL,
   estado_nucleo boolean NOT NULL DEFAULT TRUE
- )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_eje
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_eje OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_nucleo_eje --Tabla Núcleo Temático X Eje
-(
-  id SERIAL PRIMARY KEY,
-  nucleo text references par_nucleo_tematico(id) NOT NULL,
-  eje text references par_eje(id) NOT NULL
- )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_nucleo_eje
-  OWNER TO polisilabo;
------------------------------------------------------------------------------ 
-CREATE TABLE public.par_objetivo --Tabla Objectivo
-(
-  id SERIAL PRIMARY KEY,
-  cod_materia integer references par_materias(cod_materia) NOT NULL,
-  descripcion text NOT NULL,
-  id_creador integer references par_usuarios(id)  NOT NULL,
-  fecha_creacion date NOT NULL,
-  estado_nucleo boolean NOT NULL DEFAULT TRUE
-)
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_objetivo
-  OWNER TO polisilabo;
------------------------------------------------------------------------------
-CREATE TABLE public.par_nucleo_objectivo --Tabla Núcleo Temático X Objectivo
-(
+CREATE TABLE public.par_nucleo_eje ( --Tabla Núcleo Temático X Eje
   id SERIAL PRIMARY KEY,
   nucleo integer references par_nucleo_tematico(id) NOT NULL,
-  objectivo text references par_objetivo(id) NOT NULL
- )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_nucleo_objectivo
-  OWNER TO polisilabo;
+  eje integer references par_eje(id) NOT NULL
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_nucleo_eje OWNER TO polisilabo;
+----------------------------------------------------------------------------- 
+CREATE TABLE public.par_objetivo ( --Tabla Objectivo
+  id SERIAL PRIMARY KEY,
+  cod_materia integer references par_materias(cod_materia) NOT NULL,
+  descripcion text NOT NULL,
+  fecha_creacion date NOT NULL,
+  estado_nucleo boolean NOT NULL DEFAULT TRUE
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_objetivo OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_silabo --Tabla Silabo
-(
+CREATE TABLE public.par_nucleo_objectivo ( --Tabla Núcleo Temático X Objectivo
+  id SERIAL PRIMARY KEY,
+  nucleo integer references par_nucleo_tematico(id) NOT NULL,
+  objectivo integer references par_objetivo(id) NOT NULL
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_nucleo_objectivo OWNER TO polisilabo;
+-----------------------------------------------------------------------------
+CREATE TABLE public.par_silabo ( --Tabla Silabo
   id SERIAL PRIMARY KEY,
   departamento integer references par_departamento(id) NOT NULL,
   materia integer references par_materias(id) NOT NULL,
   desarrolloDidactico text NOT NULL,
   evaluacion text NOT NULL,
   apoyosReferenciales text NOT NULL
-  )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_silabo
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_silabo OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_silabo_competencia --Tabla Silabo X Competencia
-(
+CREATE TABLE public.par_silabo_competencia ( --Tabla Silabo X Competencia
   id SERIAL PRIMARY KEY,
   silabo integer references par_silabo(id) NOT NULL,
   competencia integer references par_competencia(id) NOT NULL
-  )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_silabo_competencia
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_silabo_nucleo --Tabla Silabo X Núcleo Temático
-(
+CREATE TABLE public.par_silabo_nucleo ( --Tabla Silabo X Núcleo Temático
   id SERIAL PRIMARY KEY,
   silabo integer references par_silabo(id) NOT NULL,
   nucleoTematico integer references par_competencia(id) NOT NULL
-  )
-WITH (
-  OIDS=FALSE
-);
-ALTER TABLE public.par_silabo_competencia
-  OWNER TO polisilabo;
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
+-----------------------------------------------------------------------------
