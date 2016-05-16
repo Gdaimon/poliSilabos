@@ -107,7 +107,8 @@
     <!-- Material Design Bootstrap -->
     <script src="../../js/models/DepartamentoModel.js"></script>
     <script src="../../js/collections/DepartamentoCollection.js"></script>
-    <script src="../../js/views/DepartamentoListView.js"></script>
+    <script src="../../js/views/DepartamentoListView.js"></script> 
+    
     <script type="text/javascript">
     function htmlEncode(value) {
         return $('<div/>').text(value).html();
@@ -129,7 +130,7 @@
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">account_circle</i>
                                         <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Nombre</label>
+                                        <label for="icon_prefix">Departamento</label>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -137,18 +138,9 @@
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">assignment_ind</i>
                                         <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">No. Identidad</label>
+                                        <label for="icon_prefix">Ciudad</label>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">description</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Apellido</label>
-                                    </div>
-                                </div>
-
+                                </div> 
                             </form>
                             <!--Image Card-->
                         </div>
@@ -178,14 +170,12 @@
                                         <strong>No.</strong>
                                     </th>
                                     <th>
-                                        <strong>Nombre</strong>
+                                        <strong>Departamento</strong>
                                     </th>
                                     <th>
-                                        <strong>Apellidos </strong>
+                                        <strong>Ciudad </strong>
                                     </th>
-                                    <th>
-                                        <strong>Correos </strong>
-                                    </th>
+                                    
                                     <th>
                                         <strong>Editar</strong>
                                     </th>
@@ -193,19 +183,18 @@
                             </thead>
                             <tbody class="text-center">
                                 <% _.each(departamentos, function(depto, i) { %>
+                                    
                                     <tr class="text-center">
                                         <td>
                                             <%= i+1%>
                                         </td>
                                         <td>
-                                            <%= htmlEncode(depto.get('nombreDpto')) %>
+                                            <%= htmlEncode(depto.get('nombreDepartamento')) %>
                                         </td>
                                         <td>
-                                            <%= htmlEncode(depto.get('nombreFacultad')) %>
+                                            <%= htmlEncode(depto.get('ciudadDepartamento')) %>
                                         </td>
-                                        <td>
-                                            <%= htmlEncode(depto.get('sedeFacultad')) %>
-                                        </td>
+                                        
                                         <td><button type="button" class="btn btn-default waves-effect waves-light btn-xs" data-toggle="modal" data-target="#myModal">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button></td>
 
                                     </tr>
@@ -235,25 +224,18 @@
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">account_circle</i>
                                         <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Nombre</label>
+                                        <label for="icon_prefix">Departamento</label>
                                     </div>
                                 </div>
+                        
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">assignment_ind</i>
                                         <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">No. Identidad</label>
+                                        <label for="icon_prefix">Ciudad</label>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">description</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Apellido</label>
-                                    </div>
-                                </div>
+                                </div> 
                             </form>
                             <!--Image Card-->
                         </div>
