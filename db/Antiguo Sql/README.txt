@@ -1,3 +1,9 @@
-Para tener en cuenta, ya est醤 creados los scripts de inserci髇 de las tablas a excepci髇 de: par_titulos, par_objectivos y par_ejes debido a que tengo que solucionar con Carlos un tema del modelo relacional, a鷑 no corran los scripts en sus bases dado que esto es susceptible a cambios seg鷑 lo que se discuta hoy con Carlos, de resto todo funciona acorde a lo actual si los quieren probar y trabajar
-Revisar nueva carpeta "MODELO ACTUAL" del anexo de BD.
-Tener en cuenta la ejecuci髇 en su orden respectivo, si ya crearon el rol y la BD solo empiecen desde la creaci髇 de las tablas.
+Qued贸 solucionado el tema del modelo entidad relaci贸n, se realizaron los siguientes ajustes:
+
+1.La tabla par_titulos se elimin贸 dado que hace referencia al titulo del n煤cleo tematico, en su contraparte se cambi贸 el nombre de la columna par_nucleo_tematico(descripcion) por par_nucleo_tematico(nombre), esta columna hace referencia a lo que "hac铆a" part_titulos.
+
+2. Se creo la tabla muchos a muchos par_nucleo_eje, esta tabla relaciona los nucleos con sus respectivos ejes.
+
+3.  Se creo la tabla muchos a muchos par_nucleo_onjectivo, esta tabla relaciona los nucleos con sus respectivos onjectivos.
+
+4. Se cre贸 copia en la carpeta OLD del "ANEXO - Base de Datos\MODELO ACTUAL"
