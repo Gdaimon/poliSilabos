@@ -108,7 +108,7 @@ ALTER TABLE public.par_nucleo_objectivo OWNER TO polisilabo;
 CREATE TABLE public.par_silabo ( --Tabla Silabo
   id SERIAL PRIMARY KEY,
   departamento integer references par_departamento(id) NOT NULL,
-  materia integer references par_materias(id) NOT NULL,
+  materia integer references par_materias(cod_materia) NOT NULL,
   desarrolloDidactico text NOT NULL,
   evaluacion text NOT NULL,
   apoyosReferenciales text NOT NULL
