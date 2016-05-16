@@ -82,7 +82,6 @@ CREATE TABLE public.par_eje ( --Tabla Eje
 ALTER TABLE public.par_eje OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_nucleo_eje ( --Tabla Núcleo Temático X Eje
-  id SERIAL PRIMARY KEY,
   nucleo integer references par_nucleo_tematico(id) NOT NULL,
   eje integer references par_eje(id) NOT NULL
 ) WITH (OIDS=FALSE);
@@ -100,7 +99,6 @@ CREATE TABLE public.par_objetivo ( --Tabla Objectivo
 ALTER TABLE public.par_objetivo OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_nucleo_objectivo ( --Tabla Núcleo Temático X Objectivo
-  id SERIAL PRIMARY KEY,
   nucleo integer references par_nucleo_tematico(id) NOT NULL,
   objectivo integer references par_objetivo(id) NOT NULL
 ) WITH (OIDS=FALSE);
@@ -119,7 +117,6 @@ CREATE TABLE public.par_silabo ( --Tabla Silabo
 ALTER TABLE public.par_silabo OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_silabo_competencia ( --Tabla Silabo X Competencia
-  id SERIAL PRIMARY KEY,
   silabo integer references par_silabo(id) NOT NULL,
   competencia integer references par_competencia(id) NOT NULL
 ) WITH (OIDS=FALSE);
@@ -127,7 +124,6 @@ CREATE TABLE public.par_silabo_competencia ( --Tabla Silabo X Competencia
 ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_silabo_nucleo ( --Tabla Silabo X Núcleo Temático
-  id SERIAL PRIMARY KEY,
   silabo integer references par_silabo(id) NOT NULL,
   nucleoTematico integer references par_competencia(id) NOT NULL
 ) WITH (OIDS=FALSE);
