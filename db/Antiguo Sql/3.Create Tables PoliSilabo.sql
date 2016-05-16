@@ -36,7 +36,7 @@ ALTER TABLE public.par_facultad
 CREATE TABLE public.par_departamento --Tabla Departamento
 (
   id SERIAL PRIMARY KEY,
-  id_facultad integer references par_facultad(id),
+  id_facultad integer references par_facultad(id) NOT NULL,
   nombre_departamento text NOT NULL,
   ciudad_departamento text NOT NULL,
   id_creador integer references par_usuarios(id) NOT NULL,
@@ -52,7 +52,7 @@ ALTER TABLE public.par_departamento
 CREATE TABLE public.par_materias --Tabla Materias
 (
   id SERIAL PRIMARY KEY,
-  cod_materia integer UNIQUE,
+  cod_materia integer UNIQUE NOT NULL,
   nombre text NOT NULL,
   descripcion text NOT NULL,
   logro text NOT NULL,
@@ -73,7 +73,7 @@ ALTER TABLE public.par_materias
 CREATE TABLE public.par_competencia --Tabla Competencia
 (
   id SERIAL PRIMARY KEY,
-  cod_competencia integer,
+  cod_competencia integer NOT NULL,
   descripcion text NOT NULL,
   id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE public.par_nucleo_tematico --Tabla Núcleo Tematico
 (
   id SERIAL PRIMARY KEY,
   nombre text NOT NULL,
-  cod_materia integer references par_materias(cod_materia),
+  cod_materia integer references par_materias(cod_materia) NOT NULL,
   id_creador integer references par_usuarios(id) NOT NULL,
   fecha_creacion date NOT NULL,
   estado_nucleo boolean NOT NULL DEFAULT TRUE
@@ -103,7 +103,7 @@ ALTER TABLE public.par_nucleo_tematico
 CREATE TABLE public.par_eje --Tabla Eje
 (
   id SERIAL PRIMARY KEY,
-  cod_materia integer references par_materias(cod_materia),
+  cod_materia integer references par_materias(cod_materia) NOT NULL,
   descripcion text NOT NULL,
   id_creador integer references par_usuarios(id)  NOT NULL,
   fecha_creacion date NOT NULL,
@@ -130,7 +130,7 @@ ALTER TABLE public.par_nucleo_eje
 CREATE TABLE public.par_objetivo --Tabla Objectivo
 (
   id SERIAL PRIMARY KEY,
-  cod_materia integer references par_materias(cod_materia),
+  cod_materia integer references par_materias(cod_materia) NOT NULL,
   descripcion text NOT NULL,
   id_creador integer references par_usuarios(id)  NOT NULL,
   fecha_creacion date NOT NULL,
@@ -145,12 +145,50 @@ ALTER TABLE public.par_objetivo
 CREATE TABLE public.par_nucleo_objectivo --Tabla Núcleo Temático X Objectivo
 (
   id SERIAL PRIMARY KEY,
-  nucleo integer references par_nucleo_tematico(id),
-  objectivo text references par_objectivo(id) NOT NULL
+  nucleo integer references par_nucleo_tematico(id) NOT NULL,
+  objectivo text references par_objetivo(id) NOT NULL
  )
 WITH (
   OIDS=FALSE
 );
 ALTER TABLE public.par_nucleo_objectivo
   OWNER TO polisilabo;
------------------------------------------------------------------------------  
+-----------------------------------------------------------------------------
+CREATE TABLE public.par_silabo --Tabla Silabo
+(
+  id SERIAL PRIMARY KEY,
+  departamento integer references par_departamento(id) NOT NULL,
+  materia integer references par_materias(id) NOT NULL,
+  desarrolloDidactico text NOT NULL,
+  evaluacion text NOT NULL,
+  apoyosReferenciales text NOT NULL
+  )
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.par_silabo
+  OWNER TO polisilabo;
+-----------------------------------------------------------------------------
+CREATE TABLE public.par_silabo_competencia --Tabla Silabo X Competencia
+(
+  id SERIAL PRIMARY KEY,
+  silabo integer references par_silabo(id) NOT NULL,
+  competencia integer references par_competencia(id) NOT NULL
+  )
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.par_silabo_competencia
+  OWNER TO polisilabo;
+-----------------------------------------------------------------------------
+CREATE TABLE public.par_silabo_nucleo --Tabla Silabo X Núcleo Temático
+(
+  id SERIAL PRIMARY KEY,
+  silabo integer references par_silabo(id) NOT NULL,
+  nucleoTematico integer references par_competencia(id) NOT NULL
+  )
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.par_silabo_competencia
+  OWNER TO polisilabo;
