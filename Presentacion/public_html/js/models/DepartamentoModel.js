@@ -4,8 +4,8 @@ var Departamento = Backbone.Model.extend({
             console.info("Nuevo Departamento Creado");
     },
     defaults: {
-        "codigoDpto": "",
-        "nombreDpto": "",
+        "codigoDepartamento": "",
+        "nombreDepartamento": "",
         "nombreFacultad": "",
         "sedeFacultad": ""
     }
