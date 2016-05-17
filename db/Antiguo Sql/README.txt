@@ -1,3 +1,19 @@
-Para tener en cuenta, ya est醤 creados los scripts de inserci髇 de las tablas a excepci髇 de: par_titulos, par_objectivos y par_ejes debido a que tengo que solucionar con Carlos un tema del modelo relacional, a鷑 no corran los scripts en sus bases dado que esto es susceptible a cambios seg鷑 lo que se discuta hoy con Carlos, de resto todo funciona acorde a lo actual si los quieren probar y trabajar
-Revisar nueva carpeta "MODELO ACTUAL" del anexo de BD.
-Tener en cuenta la ejecuci髇 en su orden respectivo, si ya crearon el rol y la BD solo empiecen desde la creaci髇 de las tablas.
+Qued贸 solucionado el tema del modelo entidad relaci贸n, se realizaron los siguientes ajustes:
+
+VER CAMBIOS EN "3.Create Tables PoliSilabo.sql":
+
+1.La tabla par_titulo se elimin贸 dado que hace referencia al titulo del n煤cleo tematico, en su contraparte se cambi贸 el nombre de la columna par_nucleo_tematico(descripcion) por par_nucleo_tematico(nombre), esta columna hace referencia a lo que "hac铆a" par_titulo.
+
+2. Se cre贸 la tabla muchos a muchos par_nucleo_eje, esta tabla relaciona los nucleos con sus respectivos ejes.
+
+3. Se cre贸 la tabla muchos a muchos par_nucleo_objetivo, esta tabla relaciona los nucleos con sus respectivos onjectivos.
+
+4. Se cre贸 la tabla par_silabo la cual contendr谩 toda la informaci贸n de un silabo
+
+5. Se cre贸 la tabla muchos a muchos par_silabo_nucleo, esta tabla relaciona los silabos con sus respectivos n煤cleos tem谩ticos.
+
+6. Se cre贸 la tabla muchos a muchos par_silabo_competencia, esta tabla relaciona los silabos con sus respectivas competencias.
+
+7. Se actualiza todos y cado uno de los inserts afectados por los cambios previamente descritos.
+
+8. Se cre贸 copia en la carpeta OLD del "ANEXO - Base de Datos\MODELO ACTUAL".

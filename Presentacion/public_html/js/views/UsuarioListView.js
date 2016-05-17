@@ -7,6 +7,7 @@ var UserListView = Backbone.View.extend({
             success: function (users) {
                 var template = _.template($('#user-list-template').html(), {users: users.models});
                 that.$el.html(template);
+                $('#listar-docente-table').DataTable();
             }
         })
     }
