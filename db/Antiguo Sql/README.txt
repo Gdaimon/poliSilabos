@@ -14,4 +14,6 @@ VER CAMBIOS EN "3.Create Tables PoliSilabo.sql":
 
 6. Se creó la tabla muchos a muchos par_silabo_competencia, esta tabla relaciona los silabos con sus respectivas competencias.
 
-7. Se creó copia en la carpeta OLD del "ANEXO - Base de Datos\MODELO ACTUAL"
+7. Se actualiza todos y cado uno de los inserts afectados por los cambios previamente descritos.
+
+8. Se creó copia en la carpeta OLD del "ANEXO - Base de Datos\MODELO ACTUAL".
