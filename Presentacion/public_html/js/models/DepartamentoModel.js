@@ -1,12 +1,12 @@
 var Departamento = Backbone.Model.extend({
-    initialize: function (i) {
-        url: 'http://localhost:8080/ApiSilabo/api/departamento' + '/' + i,
+    initialize: function () {
+        url: 'http://localhost:8080/ApiSilabo/api/departamento',
             console.info("Nuevo Departamento Creado");
     },
     defaults: {
-        "codigoDpto": "",
-        "nombreDpto": "",
-        "nombreFacultad": "",
-        "sedeFacultad": ""
+        "id": "",
+        //     "nombre_departamento": "",
+        //     "nombreFacultad": "",
+        //     "sedeFacultad": ""
     }
 });

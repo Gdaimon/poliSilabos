@@ -27,12 +27,30 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "par_departamento")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "ParDepartamento.findAll", query = "SELECT p FROM ParDepartamento p"),
+    @NamedQuery(name = "ParDepartamento.findAll", query =   "SELECT\n" +
+                                                            "  dep.id,\n" +
+                                                            "  dep.nombreDepartamento,\n" +
+                                                            "  dep.ciudadDepartamento,\n" +
+                                                            "  fac.nombreFacultad,\n" +
+                                                            "  dep.estadoDepartamento\n" +
+                                                            "FROM ParDepartamento dep\n" +
+                                                            "JOIN dep.idFacultad fac"),
     @NamedQuery(name = "ParDepartamento.findById", query = "SELECT p FROM ParDepartamento p WHERE p.id = :id"),
     @NamedQuery(name = "ParDepartamento.findByNombreDepartamento", query = "SELECT p FROM ParDepartamento p WHERE p.nombreDepartamento = :nombreDepartamento"),
     @NamedQuery(name = "ParDepartamento.findByCiudadDepartamento", query = "SELECT p FROM ParDepartamento p WHERE p.ciudadDepartamento = :ciudadDepartamento"),
     @NamedQuery(name = "ParDepartamento.findByFechaCreacion", query = "SELECT p FROM ParDepartamento p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParDepartamento.findByEstadoDepartamento", query = "SELECT p FROM ParDepartamento p WHERE p.estadoDepartamento = :estadoDepartamento")})
+    @NamedQuery(
+        name = "ParDepartamento.findByParams",
+        query = "SELECT p FROM ParDepartamento p WHERE " +
+                "lower(p.nombreDepartamento) like :nombreDepartamento"// and " +
+                //"lower(p.ciudadDepartamento) like :ciudadDepartamento" //and " +
+//                "p.numeroDocumento like :document_number"
+                // TODO: Add `email_institucional` to every row so that this query
+                // returns data, otherwise it'll return an empty list.
+                // "p.numeroDocumento like :document_number and " +
+                // "p.emailInstitucional like :email "
+    )
 public class ParDepartamento implements Serializable {
 
     private static final long serialVersionUID = 1L;

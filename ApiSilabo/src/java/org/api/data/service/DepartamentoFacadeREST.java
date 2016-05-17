@@ -4,6 +4,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.Consumes;
@@ -16,6 +17,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import org.api.data.ParDepartamento;
+
 
 /**
  *
@@ -95,18 +97,22 @@ public class DepartamentoFacadeREST extends AbstractFacade<ParDepartamento> {
     @GET
     @Path("buscar")
     public List<ParDepartamento> search(
-        @DefaultValue("") @QueryParam("cedula") String cedula,
-        @DefaultValue("") @QueryParam("nombre") String nombre,
-        @DefaultValue("") @QueryParam("categoria") String categoria
+        @DefaultValue("") @QueryParam("nombreDepartamento") String nombreDep
+//        @DefaultValue("") @QueryParam("ciudadDepartamento") String ciudadDepartamento
+//        @DefaultValue("") @QueryParam("categoria") String categoria
 //        @DefaultValue("") @QueryParam("id") int id
     ) {
+                Query query = em.createQuery("SELECT p FROM ParDepartamento p WHERE " +
+                "UPPER(p.nombreDepartamento) like :nombreDepartamento");
+                query.setParameter("nombreDepartamento", "%"+ nombreDep.toUpperCase() + "%");
+        List<ParDepartamento> lista = query.getResultList();
         // Returns a list of teacher filterd by GET parameters.
-        return em.createNamedQuery("ParDepartamento.findByParams")
-            .setParameter("cedula", "%" + cedula + "%")
-            .setParameter("nombre", "%" + nombre + "%")
-            .setParameter("categoria", "%" + categoria + "%")
+        return lista; //em.createNamedQuery("ParDepartamento.findByParams")
+           // .setParameter("nombreDepartamento", "\' %" + nombreDepartamento + "%\'")
+//            .setParameter("ciudadDepartamento", "%" + ciudadDepartamento + "%")
+//            .setParameter("categoria", "%" + categoria + "%")
             // .setParameter("id", "%" + id + "%") 
-            .getResultList();
+            //.getResultList();
     }
 
     /**

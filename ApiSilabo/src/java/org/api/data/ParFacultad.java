@@ -34,6 +34,17 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ParFacultad.findByCiudadFacultad", query = "SELECT p FROM ParFacultad p WHERE p.ciudadFacultad = :ciudadFacultad"),
     @NamedQuery(name = "ParFacultad.findByFechaCreacion", query = "SELECT p FROM ParFacultad p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParFacultad.findByEstadoFacultad", query = "SELECT p FROM ParFacultad p WHERE p.estadoFacultad = :estadoFacultad")})
+    @NamedQuery(
+        name = "ParFacultad.findByParams",
+        query = "SELECT p FROM ParFacultad p WHERE " +
+                "lower(p.nombreFacultad) like :name_fac and " +
+                "lower(p.ciudadFacultad) like :name_city" //and " +
+//                "p.numeroDocumento like :document_number"
+                // TODO: Add `email_institucional` to every row so that this query
+                // returns data, otherwise it'll return an empty list.
+                // "p.numeroDocumento like :document_number and " +
+                // "p.emailInstitucional like :email "
+    )
 public class ParFacultad implements Serializable {
 
     private static final long serialVersionUID = 1L;
