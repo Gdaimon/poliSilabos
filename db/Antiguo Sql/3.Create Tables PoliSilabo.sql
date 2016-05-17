@@ -88,7 +88,7 @@ CREATE TABLE public.par_nucleo_eje ( --Tabla Núcleo Temático X Eje
 
 ALTER TABLE public.par_nucleo_eje OWNER TO polisilabo;
 ----------------------------------------------------------------------------- 
-CREATE TABLE public.par_objetivo ( --Tabla Objectivo
+CREATE TABLE public.par_objetivo ( --Tabla Objetivo
   id SERIAL PRIMARY KEY,
   cod_materia integer references par_materias(cod_materia) NOT NULL,
   descripcion text NOT NULL,
@@ -98,12 +98,12 @@ CREATE TABLE public.par_objetivo ( --Tabla Objectivo
 
 ALTER TABLE public.par_objetivo OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_nucleo_objectivo ( --Tabla Núcleo Temático X Objectivo
+CREATE TABLE public.par_nucleo_objetivo ( --Tabla Núcleo Temático X Objetivo
   nucleo integer references par_nucleo_tematico(id) NOT NULL,
-  objectivo integer references par_objetivo(id) NOT NULL
+  objetivo integer references par_objetivo(id) NOT NULL
 ) WITH (OIDS=FALSE);
 
-ALTER TABLE public.par_nucleo_objectivo OWNER TO polisilabo;
+ALTER TABLE public.par_nucleo_objetivo OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_silabo ( --Tabla Silabo
   id SERIAL PRIMARY KEY,
