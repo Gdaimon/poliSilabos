@@ -76,7 +76,7 @@ CREATE TABLE public.par_eje ( --Tabla Eje
   cod_materia integer references par_materias(cod_materia) NOT NULL,
   descripcion text NOT NULL,
   fecha_creacion date NOT NULL,
-  estado_nucleo boolean NOT NULL DEFAULT TRUE
+  estado_eje boolean NOT NULL DEFAULT TRUE
 ) WITH (OIDS=FALSE);
 
 ALTER TABLE public.par_eje OWNER TO polisilabo;
@@ -93,7 +93,7 @@ CREATE TABLE public.par_objetivo ( --Tabla Objetivo
   cod_materia integer references par_materias(cod_materia) NOT NULL,
   descripcion text NOT NULL,
   fecha_creacion date NOT NULL,
-  estado_nucleo boolean NOT NULL DEFAULT TRUE
+  estado_objetivo boolean NOT NULL DEFAULT TRUE
 ) WITH (OIDS=FALSE);
 
 ALTER TABLE public.par_objetivo OWNER TO polisilabo;
@@ -130,3 +130,9 @@ CREATE TABLE public.par_silabo_nucleo ( --Tabla Silabo X Núcleo Temático
 
 ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
 -----------------------------------------------------------------------------
+CREATE TABLE public.par_usuario_materia ( --Tabla Usuario X Materia 
+  id_usuario integer references par_usuarios(id) NOT NULL,
+  id_materia integer references par_materia(cod_materia) NOT NULL,
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_usuario_materia OWNER TO polisilabo;
