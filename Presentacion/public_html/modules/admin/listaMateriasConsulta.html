@@ -33,15 +33,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-light" href="../../modules/admin/principal.html"><span id="textLogo">Institución Universitaria Politécnico GranColombiano</span></a>
+                <a class="navbar-brand waves-effect waves-light" href="index.html"><span id="textLogo">Institución Universitaria Politécnico GranColombiano</span></a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <form class="navbar-form navbar-right" role="search">
                             <div class="form-group waves-effect waves-light">
-                                <!--input type="text" class="form-control" placeholder="Buscar"-->                                 
-                                    <a class="btn btn-primary waves-effect waves-light" href="../../modules/admin/principal.html">Regresar</a>                                                       
+                                <!--input type="text" class="form-control" placeholder="Buscar"--> 
+                                    <a class="btn btn-primary waves-effect waves-light" href="../../index.html">Regresar</a>      
                             </div>
                         </form>
                     </li>
@@ -142,23 +142,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Código</label>
                                     </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Descripción</label>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Logro</label>
-                                    </div>
-                                </div> 
+                                </div>  
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -166,47 +150,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Modalidad</label>
                                     </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Nro.Créditos</label>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Duración</label>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Tipo Asignatura</label>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Estado</label>
-                                    </div>
-                                </div>                         
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Fecha Creación</label>
-                                    </div>
-                                </div>                             
+                                </div>   
                             </form>
                             <!--Image Card-->
                         </div>
@@ -244,15 +188,12 @@
                                     <th>
                                         <strong>Modalidad</strong>
                                     </th>
-                                    <th>
+                                    <!--th>
                                         <strong>Estado</strong>
-                                    </th>    
+                                    </th-->    
                                     <th>
                                         <strong>Sílabo</strong>
-                                    </th> 
-                                    <th>
-                                        <strong>Editar</strong>
-                                    </th>
+                                    </th>                                     
                                 </tr>
                             </thead>
                             <tbody class="text-center">
@@ -271,15 +212,15 @@
                                          <td>
                                             <%= htmlEncode(materia.get('modalidad')) %>
                                         </td>
-                                        <td>
+                                        <!--td>
                                             <%= htmlEncode(materia.get('estadoMateria')) %>
-                                        </td>
+                                        </td-->
                                          
                                         <td><button type="button" class="btn btn-default waves-effect waves-light btn-xs " 
-                                             onClick=" window.location.href='../../modules/admin/silaboCompletoDetalle.html'"
-                                             data-toggle="modal" data-target="#myModal2">Ver<i class="fa  fa-lg" aria-hidden="true"></i></button></td>
+                                             onClick=" window.location.href='../../modules/admin/silaboCompletoConsulta.html'"
+                                             data-toggle="modal" data-target="#myModal2">Ver<i class="fa  fa-lg" aria-hidden="true"></i></button></td>                                                                             
                                         
-                                        <td><button type="button" class="btn btn-default waves-effect waves-light btn-xs" data-toggle="modal" data-target="#myModal">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button></td>
+                                        <!--td><button type="button" class="btn btn-default waves-effect waves-light btn-xs" data-toggle="modal" data-target="#myModal">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button></td-->
                                     </tr>
                                     <% }); %>
                             </tbody>
