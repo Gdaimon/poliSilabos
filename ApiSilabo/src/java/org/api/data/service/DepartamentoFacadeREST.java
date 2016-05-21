@@ -4,9 +4,6 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -89,30 +86,16 @@ public class DepartamentoFacadeREST extends AbstractFacade<ParDepartamento> {
 
     /**
      * Metodo que realiza la busqueda de uno o varios Departamentos por sus atributos
-     * @param cedula
-     * @param nombre
-     * @param categoria
+     * @param parametro
      * @return 
      */
     @GET
-    @Path("buscar")
-    public List<ParDepartamento> search(
-        @DefaultValue("") @QueryParam("nombreDepartamento") String nombreDep
-//        @DefaultValue("") @QueryParam("ciudadDepartamento") String ciudadDepartamento
-//        @DefaultValue("") @QueryParam("categoria") String categoria
-//        @DefaultValue("") @QueryParam("id") int id
+    @Path("buscar/{parametro}")
+    public List<ParDepartamento> search(@PathParam("parametro") String param
     ) {
-                Query query = em.createQuery("SELECT p FROM ParDepartamento p WHERE " +
-                "UPPER(p.nombreDepartamento) like :nombreDepartamento");
-                query.setParameter("nombreDepartamento", "%"+ nombreDep.toUpperCase() + "%");
-        List<ParDepartamento> lista = query.getResultList();
-        // Returns a list of teacher filterd by GET parameters.
-        return lista; //em.createNamedQuery("ParDepartamento.findByParams")
-           // .setParameter("nombreDepartamento", "\' %" + nombreDepartamento + "%\'")
-//            .setParameter("ciudadDepartamento", "%" + ciudadDepartamento + "%")
-//            .setParameter("categoria", "%" + categoria + "%")
-            // .setParameter("id", "%" + id + "%") 
-            //.getResultList();
+        // Returns a list of deparamentos filterd by GET parameters.
+        return em.createNamedQuery("ParDepartamento.findByParams")
+                 .setParameter("parametro", "%"+ param + "%").getResultList();
     }
 
     /**

@@ -2,46 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f902d612-286b-4a1e-9b5e-c3d24d0ab6d5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaMaterias-borrar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaUsuarios-Borrar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/Antiguo Sql/9.Insert par_nucleo_tematico OK.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/Antiguo Sql/9.Insert par_par_nucle_tematico OK.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/collections/UsuariosCollection.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/collections/UsuariosCollection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/models/DepartamentoModel.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/models/DepartamentoModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/models/UsuarioModel.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/models/UsuarioModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarDepartamento/main.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarDepartamento/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarDocente/app.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarDocente/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarDocente/main.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarDocente/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarMateria/app.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarMateria/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarMateria/main.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarMateria/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ApiSilabo/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/ApiSilabo/nbproject/private/private.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ApiSilabo/src/conf/persistence.xml" afterPath="$PROJECT_DIR$/ApiSilabo/src/conf/persistence.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ApiSilabo/src/java/org/api/data/service/DepartamentoFacadeREST.java" afterPath="$PROJECT_DIR$/ApiSilabo/src/java/org/api/data/service/DepartamentoFacadeREST.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/collections/DepartamentoCollection.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/collections/DepartamentoCollection.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/views/FacultadListView.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/views/FacultadListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/views/MateriaListView.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/views/MateriaListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/js/views/UsuarioListView.js" afterPath="$PROJECT_DIR$/Presentacion/public_html/js/views/UsuarioListView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_I.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_I.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_II.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_II.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_III.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_III.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_IV.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_IV.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_V.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_V.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_VI.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_VI.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_VII.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_VII.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_VIII.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/itemSilabo_VIII.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaDepartamentos.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaDepartamentos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaItemSilaboNuevo.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaItemSilaboNuevo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaMaterias.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaMaterias.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaUsuarios.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaUsuarios.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/menuInicio.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/menuInicio.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/principal.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/principal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/silaboCompletoConsulta.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/silaboCompletoConsulta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/silaboCompletoDetalle.html" afterPath="$PROJECT_DIR$/Presentacion/public_html/modules/admin/silaboCompletoDetalle.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Antiguo Sql/3.Create Tables PoliSilabo.sql" afterPath="$PROJECT_DIR$/db/Antiguo Sql/3.Create Tables PoliSilabo.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Antiguo Sql/4.Insert par_usuarios OK.sql" afterPath="$PROJECT_DIR$/db/Antiguo Sql/4.Insert par_usuarios OK.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Antiguo Sql/5.Insert par_facultad OK.sql" afterPath="$PROJECT_DIR$/db/Antiguo Sql/5.Insert par_facultad OK.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Antiguo Sql/6.Insert par_departamento OK.sql" afterPath="$PROJECT_DIR$/db/Antiguo Sql/6.Insert par_departamento OK.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Antiguo Sql/7.Insert par_materias OK.sql" afterPath="$PROJECT_DIR$/db/Antiguo Sql/7.Insert par_materias OK.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Antiguo Sql/8.Insert par_competencia OK.sql" afterPath="$PROJECT_DIR$/db/Antiguo Sql/8.Insert par_competencia OK.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/Antiguo Sql/README.txt" afterPath="$PROJECT_DIR$/db/Antiguo Sql/README.txt" />
     </list>
     <ignored path="poliSilabos.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,8 +32,8 @@
       <file leaf-file-name="listaDepartamentos.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaDepartamentos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5805">
-              <caret line="215" column="52" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="52" />
+            <state relative-caret-position="200">
+              <caret line="180" column="41" selection-start-line="180" selection-start-column="41" selection-end-line="180" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -75,8 +42,8 @@
       <file leaf-file-name="DepartamentoListView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="673">
-              <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="702">
+              <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -85,8 +52,8 @@
       <file leaf-file-name="DepartamentoCollection.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/collections/DepartamentoCollection.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="3" />
+            <state relative-caret-position="81">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -134,10 +101,10 @@
         <option value="$PROJECT_DIR$/Presentacion/public_html/modules/usuario.html" />
         <option value="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaUsuarios.html" />
         <option value="$PROJECT_DIR$/Presentacion/public_html/index.html" />
+        <option value="$PROJECT_DIR$/Presentacion/public_html/js/models/DepartamentoModel.js" />
+        <option value="$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js" />
         <option value="$PROJECT_DIR$/Presentacion/public_html/js/collections/DepartamentoCollection.js" />
         <option value="$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaDepartamentos.html" />
-        <option value="$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js" />
-        <option value="$PROJECT_DIR$/Presentacion/public_html/js/models/DepartamentoModel.js" />
       </list>
     </option>
   </component>
@@ -192,7 +159,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -222,7 +188,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
+              <option name="myItemId" value="ApiSilabo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -236,33 +202,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
+              <option name="myItemId" value="ApiSilabo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
+              <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -276,128 +236,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
+              <option name="myItemId" value="ApiSilabo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="poliSilabos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Presentacion" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public_html" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="collections" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -414,20 +267,20 @@
       <recent name="$PROJECT_DIR$/Presentacion/public_html/js/modules/listarDepartamento" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html">
+  <component name="RunManager" selected="JavaScript Debug.listaDepartamentos.html (1)">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/poliSilabos/Presentacion/public_html/index.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="usuario.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/poliSilabos/Presentacion/public_html/usuario.html">
       <method />
     </configuration>
     <configuration default="false" name="principal.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/poliSilabos/Presentacion/public_html/modules/admin/principal.html">
       <method />
     </configuration>
-    <configuration default="false" name="contacto.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/poliSilabos/Presentacion/public_html/modules/contacto.html">
+    <configuration default="false" name="listaUsuarios.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/poliSilabos/Presentacion/public_html/modules/admin/listaUsuarios.html">
       <method />
     </configuration>
-    <configuration default="false" name="listaUsuarios.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/poliSilabos/Presentacion/public_html/modules/admin/listaUsuarios.html">
+    <configuration default="false" name="listaDepartamentos.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/poliSilabos/Presentacion/public_html/modules/admin/listaDepartamentos.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="listaDepartamentos.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/poliSilabos/Presentacion/public_html/modules/admin/listaDepartamentos.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -492,18 +345,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.usuario.html (1)" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.principal.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.contacto.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.listaUsuarios.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.principal.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.listaUsuarios.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listaDepartamentos.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.listaDepartamentos.html (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.listaUsuarios.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.principal.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.contacto.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.usuario.html (1)" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.listaDepartamentos.html (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.listaDepartamentos.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listaUsuarios.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.principal.html" />
       </list>
     </recent_temporary>
   </component>
@@ -524,12 +377,15 @@
       <workItem from="1461429293771" duration="6543000" />
       <workItem from="1461508422824" duration="42000" />
       <workItem from="1463320761932" duration="2830000" />
-      <workItem from="1463324762558" duration="5861000" />
+      <workItem from="1463324762558" duration="6292000" />
+      <workItem from="1463517640905" duration="1689000" />
+      <workItem from="1463575587006" duration="1316000" />
+      <workItem from="1463857883520" duration="271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17221000" />
+    <option name="totallyTimeSpent" value="20928000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -596,7 +452,23 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/index.html">
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaDepartamentos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5076">
+          <caret line="188" column="33" selection-start-line="188" selection-start-column="33" selection-end-line="188" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/collections/DepartamentoCollection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -604,11 +476,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/models/DepartamentoModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaDepartamentos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="25" column="107" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Presentacion/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
           <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -624,7 +526,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
           <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,6 +716,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1404">
           <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -829,24 +737,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/collections/DepartamentoCollection.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Presentacion/public_html/js/views/DepartamentoListView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="673">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="81">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Presentacion/public_html/modules/admin/listaDepartamentos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5805">
-          <caret line="215" column="52" selection-start-line="215" selection-start-column="52" selection-end-line="215" selection-end-column="52" />
+        <state relative-caret-position="200">
+          <caret line="180" column="41" selection-start-line="180" selection-start-column="41" selection-end-line="180" selection-end-column="41" />
           <folding />
         </state>
       </provider>

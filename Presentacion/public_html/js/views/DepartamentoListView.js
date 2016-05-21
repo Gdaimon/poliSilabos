@@ -6,12 +6,15 @@ var DepartamentoListView = Backbone.View.extend({
             // var departamentos = new DepartamentoCollection();
             departamentos.fetch({
                 success: function (departamentos) {
-                    var template = _.template($('#user-list-template').html(), {departamentos: departamentos.models});
+                    var template = _.template($('#user-list-template').html(), {
+                        mama: "nombre",
+                        departamentos: departamentos.models
+                    });
                     that.$el.html(template);
                     $('#listar-docente-table').DataTable();
 
                 }
-            })
+            });
         }
         ,
         filtroNombre: function () {
@@ -33,6 +36,7 @@ var DepartamentoListView = Backbone.View.extend({
         }
     })
     ;
+
 var departamentoListView = new DepartamentoListView();
 departamentoListView.render();
 var mostrarDepartamento = Backbone.View.extend({

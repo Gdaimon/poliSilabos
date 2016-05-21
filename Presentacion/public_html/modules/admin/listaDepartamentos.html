@@ -108,12 +108,7 @@
     <script src="../../js/models/DepartamentoModel.js"></script>
     <script src="../../js/collections/DepartamentoCollection.js"></script>
     <script src="../../js/views/DepartamentoListView.js"></script> 
-    
-    <script type="text/javascript">
-    function htmlEncode(value) {
-	    return $('<div/>').text(value).html();
-    }
-    </script>
+
     <script type="text/template" id="user-list-template">
         <div class="container">
             <div class="row">
@@ -182,7 +177,7 @@
                                         <strong>Nombre Departamento</strong>
                                     </th>
                                     <th>
-                                        <strong>Departamento</strong>
+                                        <strong>Facultad</strong>
                                     </th>
                                     <th>
                                         <strong>Ciudad </strong>
@@ -194,20 +189,19 @@
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <% _.each(departamentos, function(depto, i) { %>
-                                    
+                            <% _.each(departamentos, function(depto, i) { %>
                                     <tr class="text-center">
                                         <td>
                                             <%= i+1%>
                                         </td>
                                         <td>
-                                            <%= htmlEncode(depto.get('nombreDepartamento')) %>
+                                            <%= depto.get('nombreDepartamento') %>
                                         </td>
                                         <td>
-                                            <%= htmlEncode(depto.get('idFacultad.nombreFacultad')) %>
+                                            <%= depto.get('idFacultad').nombreFacultad %>
                                         </td>
                                         <td>
-                                            <%= htmlEncode(depto.get('ciudadDepartamento')) %>
+                                            <%= depto.get('ciudadDepartamento') %>
                                         </td>
                                         
                                       <td>
