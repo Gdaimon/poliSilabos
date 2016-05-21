@@ -130,12 +130,9 @@ CREATE TABLE public.par_silabo_nucleo ( --Tabla Silabo X Núcleo Temático
 
 ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
 -----------------------------------------------------------------------------
-CREATE TABLE public.par_usuario_facultad ( 
-  id SERIAL PRIMARY KEY,
+CREATE TABLE public.par_usuario_materia ( --Tabla Usuario X Materia 
   id_usuario integer references par_usuarios(id) NOT NULL,
-  id_facultad integer references par_facultad(id) NOT NULL,
-  fecha_creacion date NOT NULL
-  
+  id_materia integer references par_materia(cod_materia) NOT NULL,
 ) WITH (OIDS=FALSE);
 
 ALTER TABLE public.par_usuario_facultad OWNER TO polisilabo;
