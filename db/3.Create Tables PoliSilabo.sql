@@ -135,4 +135,4 @@ CREATE TABLE public.par_usuario_materia ( --Tabla Usuario X Materia
   id_materia integer references par_materia(cod_materia) NOT NULL,
 ) WITH (OIDS=FALSE);
 
-ALTER TABLE public.par_usuario_facultad OWNER TO polisilabo;
+ALTER TABLE public.par_usuario_materia OWNER TO polisilabo;
