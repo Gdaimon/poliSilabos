@@ -4,10 +4,11 @@ var DepartamentoListView = Backbone.View.extend({
         render: function () {
             var that = this;
             // var departamentos = new DepartamentoCollection();
+facultades.fetch();
             departamentos.fetch({
                 success: function (departamentos) {
                     var template = _.template($('#user-list-template').html(), {
-                        mama: "nombre",
+                        facultades: facultades.models,
                         departamentos: departamentos.models
                     });
                     that.$el.html(template);
