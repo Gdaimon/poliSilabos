@@ -18,6 +18,8 @@
   <link href="../../css/style.css" rel="stylesheet">
   <!-- Datatables -->
   <link href="../../css/datatables.min.css" rel="stylesheet">
+  <!-- Sweet Alert -->
+  <link href="../../css/sweetalert.css" rel="stylesheet">
   <!--requireJs-->
   <!--<script src="../../js/libs/require/require.js" data-main="../../"></script>-->
 </head>
@@ -103,9 +105,10 @@
   <script src="../../js/libs/underscore/underscore-min.js"></script>
   <!--Backbone-->
   <script src="../../js/libs/backbone/backbone-min.js"></script>
-  <!-- Bootstrap core JavaScript -->
+  <!-- Datatables JavaScript -->
   <script type="text/javascript" src="../../js/libs/dataTables/datatables.min.js"></script>
-  <!-- Material Design Bootstrap -->
+  <!-- SweetAlert JavaScript -->
+  <script type="text/javascript" src="../../js/libs/bootstrap-sweetalert/sweetalert.min.js"></script>
   <script src="../../js/models/DepartamentoModel.js"></script>
   <script src="../../js/models/FacultadModel.js"></script>
   <script src="../../js/collections/DepartamentoCollection.js"></script>
@@ -229,15 +232,15 @@
                   <div class="col-md-1"></div>
                   <div class="input-field col-md-9">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Departamento</label>
+                    <input id="inp-depto" type="text" class="validate">
+                    <label for="inp-depto">Departamento</label>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-2"></div>
                   <div class="col-md-8">
-                    <select class="form-control">
+                    <select class="form-control" id="list-fac">
                       <% _.each(facultades, function(fac,i) { %>
                         <option value="<%= fac.get('id') %>">
                           <%= fac.get('nombreFacultad') %>
@@ -251,8 +254,8 @@
                   <div class="col-md-1"></div>
                   <div class="input-field col-md-9">
                     <i class="material-icons prefix">assignment_ind</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Ciudad</label>
+                    <input id="inp-ciudad" type="text" class="validate">
+                    <label for="inp-ciudad">Ciudad</label>
                   </div>
                 </div>
               </form>
@@ -260,7 +263,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Guardar</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" id="btn-guardar">Guardar</button>
           </div>
         </div>
       </div>

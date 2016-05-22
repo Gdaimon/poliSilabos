@@ -1,5 +1,9 @@
 package org.api.data.service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -39,6 +43,9 @@ public class DepartamentoFacadeREST extends AbstractFacade<ParDepartamento> {
     @POST
     @Override
     public void create(ParDepartamento entity) {
+	Date date = new Date();
+        entity.setFechaCreacion(date);
+        entity.setEstadoDepartamento(true);
         super.create(entity);
     }
 

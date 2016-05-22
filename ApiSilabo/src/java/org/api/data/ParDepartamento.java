@@ -86,6 +86,15 @@ public class ParDepartamento implements Serializable {
         this.estadoDepartamento = estadoDepartamento;
     }
 
+        public ParDepartamento(Integer idFacultad, String nombreDepartamento, String ciudadDepartamento, boolean estadoDepartamento, Date fechaCreacion) {
+        this.idFacultad.setId(idFacultad);
+        this.nombreDepartamento = nombreDepartamento;
+        this.ciudadDepartamento = ciudadDepartamento;
+        this.fechaCreacion = fechaCreacion;
+        this.estadoDepartamento = estadoDepartamento;
+    }
+    
+    
     public Integer getId() {
         return id;
     }
