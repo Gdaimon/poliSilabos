@@ -73,10 +73,11 @@ var DepartamentoListView = Backbone.View.extend({
         "idFacultad": {
           "id": parseInt($("#list-fac option:selected").val())
         }
-      })
+      });
+      console.log(departamento.toJSON());
+      departamento.save();
     }
-    console.log(departamento.toJSON());
-    departamento.save();
+
   },
   mostrarNombre: function (filter) {
     filter.forEach(function (modelo, index, collection) {
