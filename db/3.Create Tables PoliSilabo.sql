@@ -136,3 +136,11 @@ CREATE TABLE public.par_usuario_materia ( --Tabla Usuario X Materia
 ) WITH (OIDS=FALSE);
 
 ALTER TABLE public.par_usuario_materia OWNER TO polisilabo;
+-----------------------------------------------------------------------------
+CREATE TABLE public.par_materia_prerequisito ( --Tabla Materias Prerequisito 
+  materia integer references par_materia(cod_materia) NOT NULL,
+  materiaPrerequisito integer references par_materia(cod_materia) NOT NULL,
+) WITH (OIDS=FALSE);
+
+ALTER TABLE public.par_materia_prerequisito OWNER TO polisilabo;
+-----------------------------------------------------------------------------
