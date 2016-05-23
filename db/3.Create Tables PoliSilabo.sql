@@ -132,14 +132,14 @@ ALTER TABLE public.par_silabo_competencia OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_usuario_materia ( --Tabla Usuario X Materia 
   id_usuario integer references par_usuarios(id) NOT NULL,
-  id_materia integer references par_materia(cod_materia) NOT NULL,
+  id_materia integer references par_materias(cod_materia) NOT NULL
 ) WITH (OIDS=FALSE);
 
 ALTER TABLE public.par_usuario_materia OWNER TO polisilabo;
 -----------------------------------------------------------------------------
 CREATE TABLE public.par_materia_prerequisito ( --Tabla Materias Prerequisito 
-  materia integer references par_materia(cod_materia) NOT NULL,
-  materiaPrerequisito integer references par_materia(cod_materia) NOT NULL,
+  materia integer references par_materias(cod_materia) NOT NULL,
+  materiaPrerequisito integer references par_materias(cod_materia) NOT NULL
 ) WITH (OIDS=FALSE);
 
 ALTER TABLE public.par_materia_prerequisito OWNER TO polisilabo;
