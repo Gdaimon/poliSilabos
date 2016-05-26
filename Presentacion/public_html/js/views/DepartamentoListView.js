@@ -100,4 +100,5 @@ var mostrarDepartamento = Backbone.View.extend({
     that.$el.html(template);
     $('#listar-docente-table').DataTable();
   }
-})
+});
+
