@@ -199,3 +199,8 @@ footer.page-footer {
     margin-top: 0;
     background-color: #1C2331;
 }
+
+.info-sila {
+    background-color: rgb(74, 189, 232) !important;
+    color: white;
+}
