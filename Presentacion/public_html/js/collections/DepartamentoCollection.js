@@ -1,8 +1,8 @@
 var DepartamentoCollection = Backbone.Collection.extend({
     // url: 'http://localhost:8080/ApiSilabo/api/departamento',
     url: 'http://localhost:8080/ApiSilabo/api/departamento',
-    traerPagina: function (pagina, count, funcion) {
-        this.url += '/' + pagina + '/' + count;
+    traerPagina: function (from, to, funcion) {
+        this.url += '/' + from + '/' + to;
         Backbone.sync("read", this.model, {
             success: function (obj) {
                 console.log('Cargo Ok ');
