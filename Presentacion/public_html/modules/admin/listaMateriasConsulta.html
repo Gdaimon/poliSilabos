@@ -40,8 +40,8 @@
                     <li class="active">
                         <form class="navbar-form navbar-right" role="search">
                             <div class="form-group waves-effect waves-light">
-                                <!--input type="text" class="form-control" placeholder="Buscar"--> 
-                                    <a class="btn btn-primary waves-effect waves-light" href="../../index.html">Regresar</a>      
+                                <!--input type="text" class="form-control" placeholder="Buscar"-->
+                                <a class="btn btn-primary waves-effect waves-light" href="../../index.html">Regresar</a>
                             </div>
                         </form>
                     </li>
@@ -53,13 +53,13 @@
     <!-- Intro image -->
     <section class="full-bg-img">
         <div class="container">
-            <div class="space-30"></div>
-            <div class="space-30"></div>
-            <div class="space-30"></div>
-            <div class="space-30"></div>
+            <div class="space-50"></div>
+            <div class="space-50"></div>
+            <div class="space-50"></div>
+            <div class="space-50"></div>
             <div class="vertical center text-center">
                 <div id="user-list" class="row">
-                <!-- Ingresar Informacion Aqui...! -->
+                    <!-- Ingresar Informacion Aqui...! -->
 
                 </div>
             </div>
@@ -92,7 +92,7 @@
     </footer>
     <!-- Footer -->
     <!-- SCRIPTS -->
-        <!-- <script type="text/javascript" data-main="../../js/conf/departamento/main.js" src="../../js/libs/require/require.js"></script> -->
+    <!-- <script type="text/javascript" data-main="../../js/conf/departamento/main.js" src="../../js/libs/require/require.js"></script> -->
     <!-- JQuery -->
     <script type="text/javascript" src="../../js/libs/jquery/jquery-2.1.3.min.js"></script>
     <!-- Bootstrap -->
@@ -106,19 +106,20 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="../../js/libs/dataTables/datatables.min.js"></script>
     <!-- Material Design Bootstrap -->
-     
+
     <script src="../../js/models/MateriaModel.js"></script>
     <script src="../../js/collections/MateriaCollection.js"></script>
-    <script src="../../js/views/MateriaListView.js"></script> 
-    
+    <script src="../../js/views/MateriaListView.js"></script>
+
     <script type="text/javascript">
-    function htmlEncode(value) {
-        return $('<div/>').text(value).html();
-    }
+        function htmlEncode(value) {
+            return $('<div/>').text(value).html();
+        }
     </script>
     <script type="text/template" id="user-list-template">
         <div class="container">
             <div class="row">
+                <!--Panel Buscar-->
                 <div class="col-md-4">
                     <!--Image Card-->
                     <div class="panel panel-primary">
@@ -131,40 +132,27 @@
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Materia</label>
+
+                                        <input id="icon_prefix" type="text" class="validate depto">
+                                        <label for="icon_prefix">Materia, Codigo, Modalidad</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Código</label>
-                                    </div>
-                                </div>  
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Modalidad</label>
-                                    </div>
-                                </div>   
                             </form>
                             <!--Image Card-->
                         </div>
                         <div class="panel-footer  ">
-                                <div class="row">
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-default waves-effect waves-light">Buscar</button>
-                                    </div>
-                                    <div class="col-md-4"></div>
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-default waves-effect waves-light buscar">Buscar</button>
                                 </div>
+                                <div class="col-md-4"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--Panel Buscar-->
+                <!--Panel Lista-->
                 <div class="col-md-8">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -190,15 +178,15 @@
                                     </th>
                                     <!--th>
                                         <strong>Estado</strong>
-                                    </th-->    
+                                    </th-->
                                     <th>
                                         <strong>Sílabo</strong>
-                                    </th>                                     
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody class="text-center">
                                 <% _.each(materias, function(materia, i) { %>
-                                    
+
                                     <tr class="text-center">
                                         <td>
                                             <%= i+1%>
@@ -209,17 +197,17 @@
                                         <td>
                                             <%= htmlEncode(materia.get('codMateria')) %>
                                         </td>
-                                         <td>
+                                        <td>
                                             <%= htmlEncode(materia.get('modalidad')) %>
                                         </td>
                                         <!--td>
                                             <%= htmlEncode(materia.get('estadoMateria')) %>
                                         </td-->
-                                         
-                                        <td><button type="button" class="btn btn-default waves-effect waves-light btn-xs " 
-                                             onClick=" window.location.href='../../modules/admin/silaboCompletoConsulta.html'"
-                                             data-toggle="modal" data-target="#myModal2">Ver<i class="fa  fa-lg" aria-hidden="true"></i></button></td>                                                                             
-                                        
+
+                                        <td>
+                                            <button type="button" class="btn btn-default waves-effect waves-light btn-xs " onClick=" window.location.href='../../modules/admin/silaboCompletoConsulta.html'" data-toggle="modal" data-target="#myModal2">Ver<i class="fa  fa-lg" aria-hidden="true"></i></button>
+                                        </td>
+
                                         <!--td><button type="button" class="btn btn-default waves-effect waves-light btn-xs" data-toggle="modal" data-target="#myModal">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button></td-->
                                     </tr>
                                     <% }); %>
@@ -232,10 +220,10 @@
         </div>
         </div>
         <!-- Modal -->
-         
-        
-        
-        <div class="modal fade" id="myModal" role="dialog"  >
+
+
+
+        <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
@@ -261,7 +249,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Código</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -269,7 +257,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Modalidad</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -277,7 +265,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Nro.Créditos</label>
                                     </div>
-                                </div>                          
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -285,7 +273,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Descripción</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -293,7 +281,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Logros</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -301,7 +289,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Duración</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -309,7 +297,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Tipo de Asignatura</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -317,7 +305,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Estado</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -325,7 +313,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Fecha creación</label>
                                     </div>
-                                </div>       
+                                </div>
                             </form>
                             <!--Image Card-->
                         </div>

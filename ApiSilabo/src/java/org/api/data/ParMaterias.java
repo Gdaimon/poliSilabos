@@ -4,11 +4,15 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -42,14 +46,31 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ParMaterias.findByEstadoMateria", query = "SELECT p FROM ParMaterias p WHERE p.estadoMateria = :estadoMateria")})
 public class ParMaterias implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "cod_materia")
+    private int codMateria;
+    @JoinTable(name = "par_materia_prerequisito", joinColumns = {
+        @JoinColumn(name = "materia", referencedColumnName = "cod_materia")}, inverseJoinColumns = {
+        @JoinColumn(name = "materiaprerequisito", referencedColumnName = "cod_materia")})
+    @ManyToMany
+    private Collection<ParMaterias> parMateriasCollection;
+    @ManyToMany(mappedBy = "parMateriasCollection")
+    private Collection<ParMaterias> parMateriasCollection1;
+    @JoinTable(name = "par_usuario_materia", joinColumns = {
+        @JoinColumn(name = "id_materia", referencedColumnName = "cod_materia")}, inverseJoinColumns = {
+        @JoinColumn(name = "id_usuario", referencedColumnName = "id")})
+    @ManyToMany
+    private Collection<ParUsuarios> parUsuariosCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "materia")
+    private Collection<ParSilabo> parSilaboCollection;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "cod_materia")
-    private Integer codMateria;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 2147483647)
@@ -269,6 +290,46 @@ public class ParMaterias implements Serializable {
     @Override
     public String toString() {
         return "org.api.data.ParMaterias[ id=" + id + " ]";
+    }
+
+    public void setCodMateria(int codMateria) {
+        this.codMateria = codMateria;
+    }
+
+    @XmlTransient
+    public Collection<ParMaterias> getParMateriasCollection() {
+        return parMateriasCollection;
+    }
+
+    public void setParMateriasCollection(Collection<ParMaterias> parMateriasCollection) {
+        this.parMateriasCollection = parMateriasCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParMaterias> getParMateriasCollection1() {
+        return parMateriasCollection1;
+    }
+
+    public void setParMateriasCollection1(Collection<ParMaterias> parMateriasCollection1) {
+        this.parMateriasCollection1 = parMateriasCollection1;
+    }
+
+    @XmlTransient
+    public Collection<ParUsuarios> getParUsuariosCollection() {
+        return parUsuariosCollection;
+    }
+
+    public void setParUsuariosCollection(Collection<ParUsuarios> parUsuariosCollection) {
+        this.parUsuariosCollection = parUsuariosCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParSilabo> getParSilaboCollection() {
+        return parSilaboCollection;
+    }
+
+    public void setParSilaboCollection(Collection<ParSilabo> parSilaboCollection) {
+        this.parSilaboCollection = parSilaboCollection;
     }
     
 }

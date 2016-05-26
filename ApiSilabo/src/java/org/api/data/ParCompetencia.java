@@ -1,6 +1,7 @@
 package org.api.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -8,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -16,6 +20,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -33,14 +38,22 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ParCompetencia.findByEstadoCompetencia", query = "SELECT p FROM ParCompetencia p WHERE p.estadoCompetencia = :estadoCompetencia")})
 public class ParCompetencia implements Serializable {
 
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "cod_competencia")
+    private int codCompetencia;
+    @JoinTable(name = "par_silabo_competencia", joinColumns = {
+        @JoinColumn(name = "competencia", referencedColumnName = "id")}, inverseJoinColumns = {
+        @JoinColumn(name = "silabo", referencedColumnName = "id")})
+    @ManyToMany
+    private Collection<ParSilabo> parSilaboCollection;
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "cod_competencia")
-    private Integer codCompetencia;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 2147483647)
@@ -133,6 +146,19 @@ public class ParCompetencia implements Serializable {
     @Override
     public String toString() {
         return "org.api.data.ParCompetencia[ id=" + id + " ]";
+    }
+
+    public void setCodCompetencia(int codCompetencia) {
+        this.codCompetencia = codCompetencia;
+    }
+
+    @XmlTransient
+    public Collection<ParSilabo> getParSilaboCollection() {
+        return parSilaboCollection;
+    }
+
+    public void setParSilaboCollection(Collection<ParSilabo> parSilaboCollection) {
+        this.parSilaboCollection = parSilaboCollection;
     }
     
 }

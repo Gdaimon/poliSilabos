@@ -1,6 +1,7 @@
 package org.api.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -18,6 +21,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -33,6 +37,16 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ParEje.findByFechaCreacion", query = "SELECT p FROM ParEje p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParEje.findByEstadoNucleo", query = "SELECT p FROM ParEje p WHERE p.estadoNucleo = :estadoNucleo")})
 public class ParEje implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "estado_eje")
+    private boolean estadoEje;
+    @JoinTable(name = "par_nucleo_eje", joinColumns = {
+        @JoinColumn(name = "eje", referencedColumnName = "id")}, inverseJoinColumns = {
+        @JoinColumn(name = "nucleo", referencedColumnName = "id")})
+    @ManyToMany
+    private Collection<ParNucleoTematico> parNucleoTematicoCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -135,6 +149,23 @@ public class ParEje implements Serializable {
     @Override
     public String toString() {
         return "org.api.data.ParEje[ id=" + id + " ]";
+    }
+
+    public boolean getEstadoEje() {
+        return estadoEje;
+    }
+
+    public void setEstadoEje(boolean estadoEje) {
+        this.estadoEje = estadoEje;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoTematico> getParNucleoTematicoCollection() {
+        return parNucleoTematicoCollection;
+    }
+
+    public void setParNucleoTematicoCollection(Collection<ParNucleoTematico> parNucleoTematicoCollection) {
+        this.parNucleoTematicoCollection = parNucleoTematicoCollection;
     }
     
 }

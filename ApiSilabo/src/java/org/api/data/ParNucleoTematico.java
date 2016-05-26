@@ -1,6 +1,7 @@
 package org.api.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -18,6 +21,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -33,6 +37,24 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ParNucleoTematico.findByFechaCreacion", query = "SELECT p FROM ParNucleoTematico p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParNucleoTematico.findByEstadoNucleo", query = "SELECT p FROM ParNucleoTematico p WHERE p.estadoNucleo = :estadoNucleo")})
 public class ParNucleoTematico implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 2147483647)
+    @Column(name = "nombre")
+    private String nombre;
+    @ManyToMany(mappedBy = "parNucleoTematicoCollection")
+    private Collection<ParEje> parEjeCollection;
+    @JoinTable(name = "par_silabo_nucleo", joinColumns = {
+        @JoinColumn(name = "nucleotematico", referencedColumnName = "id")}, inverseJoinColumns = {
+        @JoinColumn(name = "silabo", referencedColumnName = "id")})
+    @ManyToMany
+    private Collection<ParSilabo> parSilaboCollection;
+    @JoinTable(name = "par_nucleo_objetivo", joinColumns = {
+        @JoinColumn(name = "nucleo", referencedColumnName = "id")}, inverseJoinColumns = {
+        @JoinColumn(name = "objetivo", referencedColumnName = "id")})
+    @ManyToMany
+    private Collection<ParObjetivo> parObjetivoCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -135,6 +157,41 @@ public class ParNucleoTematico implements Serializable {
     @Override
     public String toString() {
         return "org.api.data.ParNucleoTematico[ id=" + id + " ]";
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @XmlTransient
+    public Collection<ParEje> getParEjeCollection() {
+        return parEjeCollection;
+    }
+
+    public void setParEjeCollection(Collection<ParEje> parEjeCollection) {
+        this.parEjeCollection = parEjeCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParSilabo> getParSilaboCollection() {
+        return parSilaboCollection;
+    }
+
+    public void setParSilaboCollection(Collection<ParSilabo> parSilaboCollection) {
+        this.parSilaboCollection = parSilaboCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParObjetivo> getParObjetivoCollection() {
+        return parObjetivoCollection;
+    }
+
+    public void setParObjetivoCollection(Collection<ParObjetivo> parObjetivoCollection) {
+        this.parObjetivoCollection = parObjetivoCollection;
     }
     
 }

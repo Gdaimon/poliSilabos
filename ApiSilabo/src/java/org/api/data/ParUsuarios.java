@@ -1,6 +1,7 @@
 package org.api.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -16,6 +18,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -37,6 +40,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ParUsuarios.findByFechaCreacion", query = "SELECT p FROM ParUsuarios p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParUsuarios.findByEstadoUsuario", query = "SELECT p FROM ParUsuarios p WHERE p.estadoUsuario = :estadoUsuario")})
 public class ParUsuarios implements Serializable {
+
+    @ManyToMany(mappedBy = "parUsuariosCollection")
+    private Collection<ParMaterias> parMateriasCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -208,6 +214,15 @@ public class ParUsuarios implements Serializable {
     @Override
     public String toString() {
         return "org.api.data.ParUsuarios[ id=" + id + " ]";
+    }
+
+    @XmlTransient
+    public Collection<ParMaterias> getParMateriasCollection() {
+        return parMateriasCollection;
+    }
+
+    public void setParMateriasCollection(Collection<ParMaterias> parMateriasCollection) {
+        this.parMateriasCollection = parMateriasCollection;
     }
     
 }

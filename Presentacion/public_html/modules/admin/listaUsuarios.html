@@ -41,7 +41,7 @@
                         <form class="navbar-form navbar-right" role="search">
                             <div class="form-group waves-effect waves-light">
                                 <!--input type="text" class="form-control" placeholder="Buscar"-->
-                                 <a class="btn btn-primary waves-effect waves-light" href="../../modules/admin/menuAdministrador.html">Regresar</a>   
+                                 <a class="btn btn-primary waves-effect waves-light" href="../../modules/admin/menuAdministrador.html">Regresar</a>
                             </div>
                         </form>
                     </li>
@@ -53,10 +53,10 @@
     <!-- Intro image -->
     <section class="full-bg-img">
         <div class="container">
-            <div class="space-30"></div>
-            <div class="space-30"></div>
-            <div class="space-30"></div>
-            <div class="space-30"></div>
+            <div class="space-50"></div>
+            <div class="space-50"></div>
+            <div class="space-50"></div>
+            <div class="space-50"></div>
             <div class="vertical center text-center">
                 <div id="user-list" class="row">
                 <!-- Ingresar Informacion Aqui...! -->
@@ -109,16 +109,16 @@
     <script src="../../js/models/DepartamentoModel.js"></script>
     <script src="../../js/collections/DepartamentoCollection.js"></script>
     <script src="../../js/views/DepartamentoListView.js"></script>
-    
+
     <script src="../../js/models/FacultadModel.js"></script>
-    <script src="../../js/collections/FacultadCollection.js"></script>    
+    <script src="../../js/collections/FacultadCollection.js"></script>
     <script src="../../js/views/FacultadListView.js"></script>
-    
+
     <script src="../../js/models/UsuarioModel.js"></script>
     <script src="../../js/collections/UsuariosCollection.js"></script>
     <script src="../../js/views/UsuarioListView.js"></script>
-    <script src="../../js/views/UsuarioEditView.js"></script> 
-    
+    <script src="../../js/views/UsuarioEditView.js"></script>
+
     <script type="text/javascript">
     function htmlEncode(value) {
         return $('<div/>').text(value).html();
@@ -127,6 +127,7 @@
     <script type="text/template" id="user-list-template">
         <div class="container">
             <div class="row">
+                <!--Panel Buscar-->
                 <div class="col-md-4">
                     <!--Image Card-->
                     <div class="panel panel-primary">
@@ -139,57 +140,27 @@
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Nombre</label>
+
+                                        <input id="icon_prefix" type="text" class="validate depto">
+                                        <label for="icon_prefix">Nombre, Cedula, E-mail</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Apellido</label>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Tipo Celuda</label>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Nro. Celuda</label>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="col-md-1"></div>
-                                    <div class="input-field col-md-9">
-                                        <i class="material-icons prefix">assignment_ind</i>
-                                        <input id="icon_prefix" type="text" class="validate">
-                                        <label for="icon_prefix">Correo</label>
-                                    </div>
-                                </div> 
-                        
                             </form>
                             <!--Image Card-->
                         </div>
                         <div class="panel-footer  ">
-                        <div class="row">
-                                    <div class="col-md-4"></div>
-                                    <div class="col-md-3">
-                                        <button type="submit" class="btn btn-default waves-effect waves-light">Buscar</button>
-                                    </div>
-                                    <div class="col-md-4"></div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-default waves-effect waves-light buscar">Buscar</button>
                                 </div>
+                                <div class="col-md-4"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+                <!--Panel Buscar-->
+                <!--Panel Lista-->
                 <div class="col-md-8">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
@@ -210,6 +181,9 @@
                                     <th>
                                         <strong>Apellido</strong>
                                     </th>
+                                                                        <th>
+                                        <strong>No. Cedula</strong>
+                                    </th>
                                     <th>
                                         <strong>Correo</strong>
                                     </th>
@@ -220,7 +194,7 @@
                             </thead>
                             <tbody class="text-center">
                                 <% _.each(users, function(user, i) { %>
-                                    
+
                                     <tr class="text-center">
                                         <td>
                                             <%= i+1%>
@@ -232,6 +206,9 @@
                                             <%= htmlEncode(user.get('apellido')) %>
                                         </td>
                                          <td>
+                                            <%= htmlEncode(user.get('idUsuario')) %>
+                                        </td>
+                                                                                 <td>
                                             <%= htmlEncode(user.get('email')) %>
                                         </td>
                                         <td><button type="button" class="btn btn-default waves-effect waves-light btn-xs" data-toggle="modal" data-target="#myModal">Editar <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i></button></td>
@@ -273,7 +250,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Apellido</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -281,7 +258,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Tipo Cedula</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -289,8 +266,8 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Nro.Cedula</label>
                                     </div>
-                                </div>  
-                        
+                                </div>
+
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -298,7 +275,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Correo</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -306,7 +283,7 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Perfil</label>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="row">
                                     <div class="col-md-1"></div>
                                     <div class="input-field col-md-9">
@@ -314,8 +291,8 @@
                                         <input id="icon_prefix" type="text" class="validate">
                                         <label for="icon_prefix">Password</label>
                                     </div>
-                                </div> 
-                        
+                                </div>
+
                             </form>
                             <!--Image Card-->
                         </div>
