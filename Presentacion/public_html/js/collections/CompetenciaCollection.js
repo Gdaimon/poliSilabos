@@ -1,5 +1,4 @@
 var CompetenciaCollection = Backbone.Collection.extend({
-    // url: 'http://localhost:8080/ApiSilabo/api/departamento',
     url: 'http://localhost:8080/ApiSilabo/api/competencia',
     traerPagina: function (from, to, funcion) {
         this.url += '/' + from + '/' + to;
