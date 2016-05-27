@@ -7,13 +7,11 @@ var CompetenciaListView = Backbone.View.extend({
   },
   render: function () {
     var that = this;
-    // var departamentos = new DepartamentoCollection();
-    facultades.fetch();
-    departamentos.fetch({
-      success: function (departamentos) {
+    // var competencias = new CompetenciaCollection();
+    competencias.fetch({
+      success: function (competencias) {
         var template = _.template($('#user-list-template').html(), {
-          facultades: facultades.models,
-          departamentos: departamentos.models
+          competencias: competencias.models
         });
         that.$el.html(template);
         $('#listar-docente-table').DataTable();
@@ -21,81 +19,66 @@ var CompetenciaListView = Backbone.View.extend({
       }
     });
   },
-  filtroNombre: function () {
+  filtroDescripcion: function () {
     $('#listar-docente-table').html('');
-    var depto = $('.depto').val();
-    if (depto != null) {
+    var compe = $('.compe').val();
+    if (compe != null) {
 
-      filter = departamentos.filter(function (model) {
-        return model.get('nombreDepartamento').toUpperCase().indexOf(depto.toUpperCase()) != -1;
+      filter = competencias.filter(function (model) {
+        return model.get('descripcion').toUpperCase().indexOf(compe.toUpperCase()) != -1;
       });
       this.mostrarNombre(filter);
     }
   },
-  cambiarFactultad: function () {
-    var indice = parseInt($("#list-fac option:selected").val());
-    facultad.set({
-      'id': indice
-    });
-    facultad.fetch();
-    console.log(facultad.get('ciudadFacultad'));
-    departamento.set({
-      "idFacultad": {
-        "id": indice
-      }
-    });
-    console.log(departamento.toJSON());
-    //    return this.facult;
-  },
+
   guardar: function () {
-    if (($("#inp-depto").val() === '')) {
+    if (($("#inp-codCompe").val() === '')) {
       swal({
         title: "Registro Incompleto",
-        text: "Por favor ingrese el Departamento",
+        text: "Por favor ingrese el código de la competencia",
         type: "warning",
         confirmButtonClass: "btn-warning",
         confirmButtonText: "Ok",
         closeOnConfirm: false
       });
-    } else if (($("#inp-ciudad").val() === '')) {
+    } else if (($("#inp-descripcion").val() === '')) {
       swal({
         title: "Registro Incompleto",
-        text: "Por favor ingrese la Ciudad",
+        text: "Por favor ingrese la Descripcion",
         type: "warning",
         confirmButtonClass: "btn-warning",
         confirmButtonText: "Ok",
         closeOnConfirm: false
       });
     } else {
-      departamento.set({
-        "nombreDepartamento": $("#inp-depto").val(),
-        "ciudadDepartamento": $("#inp-ciudad").val(),
-        "idFacultad": {
+      competencia.set({
+        "codCompetencia": $("#inp-codCompe").val(),
+        "descripcion": $("#inp-descipcion").val() {
           "id": parseInt($("#list-fac option:selected").val())
         }
       });
-      console.log(departamento.toJSON());
-      departamento.save();
+      console.log(competencia.toJSON());
+      competencia.save();
     }
 
   },
   mostrarNombre: function (filter) {
     filter.forEach(function (modelo, index, collection) {
-      var deptos = new mostrarDepartamento({
+      var compcias = new mostrarCompetencia({
         collection: collection
       });
-      $('#listar-docente-table').append(deptos.render().$el);
+      $('#listar-docente-table').append(compcias.render().$el);
     });
   }
 });
 
-var departamentoListView = new DepartamentoListView();
-departamentoListView.render();
-var mostrarDepartamento = Backbone.View.extend({
+var competenciaListView = new CompetenciaListView();
+competenciaoListView.render();
+var mostrarCompetencia = Backbone.View.extend({
   template: _.template($('#user-list-template').html()),
-  render: function (dep) {
+  render: function (compe) {
     var template = _.template($('#user-list-template').html(), {
-      departamentos: dep.models
+      competencias: compe.models
     });
     that.$el.html(template);
     $('#listar-docente-table').DataTable();
