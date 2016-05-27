@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
         resources.add(org.api.data.service.EjeFacadeREST.class);
         resources.add(org.api.data.service.FacultadFacadeREST.class);
         resources.add(org.api.data.service.MateriaFacadeREST.class);
+        resources.add(org.api.data.service.SilaboFacadeREST.class);
         resources.add(org.api.data.service.UsuariosFacadeREST.class);
     }
 

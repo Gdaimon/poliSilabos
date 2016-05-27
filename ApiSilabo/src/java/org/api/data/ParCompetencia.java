@@ -14,6 +14,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -38,10 +39,10 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ParCompetencia.findByEstadoCompetencia", query = "SELECT p FROM ParCompetencia p WHERE p.estadoCompetencia = :estadoCompetencia")})
 public class ParCompetencia implements Serializable {
 
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "cod_competencia")
-    private int codCompetencia;
+    private Integer codCompetencia;
+    @OneToMany(mappedBy = "idCompetencia")
+    private Collection<ParSilabo> parSilaboCollection1;
     @JoinTable(name = "par_silabo_competencia", joinColumns = {
         @JoinColumn(name = "competencia", referencedColumnName = "id")}, inverseJoinColumns = {
         @JoinColumn(name = "silabo", referencedColumnName = "id")})
@@ -159,6 +160,23 @@ public class ParCompetencia implements Serializable {
 
     public void setParSilaboCollection(Collection<ParSilabo> parSilaboCollection) {
         this.parSilaboCollection = parSilaboCollection;
+    }
+
+    public Integer getCodCompetencias() {
+        return codCompetencia;
+    }
+
+    public void setCodCompetencias(Integer codCompetencias) {
+        this.codCompetencia = codCompetencias;
+    }
+
+    @XmlTransient
+    public Collection<ParSilabo> getParSilaboCollection1() {
+        return parSilaboCollection1;
+    }
+
+    public void setParSilaboCollection1(Collection<ParSilabo> parSilaboCollection1) {
+        this.parSilaboCollection1 = parSilaboCollection1;
     }
     
 }

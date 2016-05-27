@@ -14,6 +14,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,6 +37,9 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ParObjetivo.findByFechaCreacion", query = "SELECT p FROM ParObjetivo p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParObjetivo.findByEstadoNucleo", query = "SELECT p FROM ParObjetivo p WHERE p.estadoNucleo = :estadoNucleo")})
 public class ParObjetivo implements Serializable {
+
+    @OneToMany(mappedBy = "idObjetivo")
+    private Collection<ParNucleoObjetivo> parNucleoObjetivoCollection;
 
     @Basic(optional = false)
     @NotNull
@@ -162,6 +166,15 @@ public class ParObjetivo implements Serializable {
 
     public void setParNucleoTematicoCollection(Collection<ParNucleoTematico> parNucleoTematicoCollection) {
         this.parNucleoTematicoCollection = parNucleoTematicoCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoObjetivo> getParNucleoObjetivoCollection() {
+        return parNucleoObjetivoCollection;
+    }
+
+    public void setParNucleoObjetivoCollection(Collection<ParNucleoObjetivo> parNucleoObjetivoCollection) {
+        this.parNucleoObjetivoCollection = parNucleoObjetivoCollection;
     }
     
 }

@@ -46,10 +46,8 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ParMaterias.findByEstadoMateria", query = "SELECT p FROM ParMaterias p WHERE p.estadoMateria = :estadoMateria")})
 public class ParMaterias implements Serializable {
 
-    @Basic(optional = false)
-    @NotNull
     @Column(name = "cod_materia")
-    private int codMateria;
+    private Integer codMateria;
     @JoinTable(name = "par_materia_prerequisito", joinColumns = {
         @JoinColumn(name = "materia", referencedColumnName = "cod_materia")}, inverseJoinColumns = {
         @JoinColumn(name = "materiaprerequisito", referencedColumnName = "cod_materia")})
@@ -330,6 +328,14 @@ public class ParMaterias implements Serializable {
 
     public void setParSilaboCollection(Collection<ParSilabo> parSilaboCollection) {
         this.parSilaboCollection = parSilaboCollection;
+    }
+
+    public Integer getCodMaterias() {
+        return codMateria;
+    }
+
+    public void setCodMaterias(Integer codMaterias) {
+        this.codMateria = codMaterias;
     }
     
 }

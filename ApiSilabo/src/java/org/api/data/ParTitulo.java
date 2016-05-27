@@ -1,6 +1,7 @@
 package org.api.data;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -12,12 +13,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -33,6 +36,11 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ParTitulo.findByFechaCreacion", query = "SELECT p FROM ParTitulo p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParTitulo.findByEstadoNucleo", query = "SELECT p FROM ParTitulo p WHERE p.estadoNucleo = :estadoNucleo")})
 public class ParTitulo implements Serializable {
+
+    @OneToMany(mappedBy = "idTitulo")
+    private Collection<ParNucleoTitulo> parNucleoTituloCollection;
+    @OneToMany(mappedBy = "idTitulo")
+    private Collection<ParNucleoTematico> parNucleoTematicoCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -135,6 +143,24 @@ public class ParTitulo implements Serializable {
     @Override
     public String toString() {
         return "org.api.data.ParTitulo[ id=" + id + " ]";
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoTitulo> getParNucleoTituloCollection() {
+        return parNucleoTituloCollection;
+    }
+
+    public void setParNucleoTituloCollection(Collection<ParNucleoTitulo> parNucleoTituloCollection) {
+        this.parNucleoTituloCollection = parNucleoTituloCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoTematico> getParNucleoTematicoCollection() {
+        return parNucleoTematicoCollection;
+    }
+
+    public void setParNucleoTematicoCollection(Collection<ParNucleoTematico> parNucleoTematicoCollection) {
+        this.parNucleoTematicoCollection = parNucleoTematicoCollection;
     }
     
 }

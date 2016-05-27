@@ -15,6 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -37,6 +38,24 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ParNucleoTematico.findByFechaCreacion", query = "SELECT p FROM ParNucleoTematico p WHERE p.fechaCreacion = :fechaCreacion"),
     @NamedQuery(name = "ParNucleoTematico.findByEstadoNucleo", query = "SELECT p FROM ParNucleoTematico p WHERE p.estadoNucleo = :estadoNucleo")})
 public class ParNucleoTematico implements Serializable {
+
+    @OneToMany(mappedBy = "idNucleo")
+    private Collection<ParNucleoTitulo> parNucleoTituloCollection;
+    @OneToMany(mappedBy = "idNucleo")
+    private Collection<ParNucleoEje> parNucleoEjeCollection;
+    @JoinColumn(name = "id_eje", referencedColumnName = "id")
+    @ManyToOne
+    private ParEje idEje;
+    @JoinColumn(name = "id_objetivo", referencedColumnName = "id")
+    @ManyToOne
+    private ParObjetivo idObjetivo;
+    @JoinColumn(name = "id_titulo", referencedColumnName = "id")
+    @ManyToOne
+    private ParTitulo idTitulo;
+    @OneToMany(mappedBy = "idNucleo")
+    private Collection<ParSilaboNucleo> parSilaboNucleoCollection;
+    @OneToMany(mappedBy = "idNucleo")
+    private Collection<ParNucleoObjetivo> parNucleoObjetivoCollection;
 
     @Basic(optional = false)
     @NotNull
@@ -192,6 +211,66 @@ public class ParNucleoTematico implements Serializable {
 
     public void setParObjetivoCollection(Collection<ParObjetivo> parObjetivoCollection) {
         this.parObjetivoCollection = parObjetivoCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoTitulo> getParNucleoTituloCollection() {
+        return parNucleoTituloCollection;
+    }
+
+    public void setParNucleoTituloCollection(Collection<ParNucleoTitulo> parNucleoTituloCollection) {
+        this.parNucleoTituloCollection = parNucleoTituloCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoEje> getParNucleoEjeCollection() {
+        return parNucleoEjeCollection;
+    }
+
+    public void setParNucleoEjeCollection(Collection<ParNucleoEje> parNucleoEjeCollection) {
+        this.parNucleoEjeCollection = parNucleoEjeCollection;
+    }
+
+    public ParEje getIdEje() {
+        return idEje;
+    }
+
+    public void setIdEje(ParEje idEje) {
+        this.idEje = idEje;
+    }
+
+    public ParObjetivo getIdObjetivo() {
+        return idObjetivo;
+    }
+
+    public void setIdObjetivo(ParObjetivo idObjetivo) {
+        this.idObjetivo = idObjetivo;
+    }
+
+    public ParTitulo getIdTitulo() {
+        return idTitulo;
+    }
+
+    public void setIdTitulo(ParTitulo idTitulo) {
+        this.idTitulo = idTitulo;
+    }
+
+    @XmlTransient
+    public Collection<ParSilaboNucleo> getParSilaboNucleoCollection() {
+        return parSilaboNucleoCollection;
+    }
+
+    public void setParSilaboNucleoCollection(Collection<ParSilaboNucleo> parSilaboNucleoCollection) {
+        this.parSilaboNucleoCollection = parSilaboNucleoCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoObjetivo> getParNucleoObjetivoCollection() {
+        return parNucleoObjetivoCollection;
+    }
+
+    public void setParNucleoObjetivoCollection(Collection<ParNucleoObjetivo> parNucleoObjetivoCollection) {
+        this.parNucleoObjetivoCollection = parNucleoObjetivoCollection;
     }
     
 }

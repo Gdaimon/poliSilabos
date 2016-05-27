@@ -15,6 +15,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -38,6 +39,11 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ParEje.findByEstadoNucleo", query = "SELECT p FROM ParEje p WHERE p.estadoNucleo = :estadoNucleo")})
 public class ParEje implements Serializable {
 
+    @OneToMany(mappedBy = "idEje")
+    private Collection<ParNucleoEje> parNucleoEjeCollection;
+    @OneToMany(mappedBy = "idEje")
+    private Collection<ParNucleoTematico> parNucleoTematicoCollection;
+
     @Basic(optional = false)
     @NotNull
     @Column(name = "estado_eje")
@@ -46,7 +52,7 @@ public class ParEje implements Serializable {
         @JoinColumn(name = "eje", referencedColumnName = "id")}, inverseJoinColumns = {
         @JoinColumn(name = "nucleo", referencedColumnName = "id")})
     @ManyToMany
-    private Collection<ParNucleoTematico> parNucleoTematicoCollection;
+    private Collection<ParNucleoTematico> parNucleoTematicoCollections;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -166,6 +172,24 @@ public class ParEje implements Serializable {
 
     public void setParNucleoTematicoCollection(Collection<ParNucleoTematico> parNucleoTematicoCollection) {
         this.parNucleoTematicoCollection = parNucleoTematicoCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoEje> getParNucleoEjeCollection() {
+        return parNucleoEjeCollection;
+    }
+
+    public void setParNucleoEjeCollection(Collection<ParNucleoEje> parNucleoEjeCollection) {
+        this.parNucleoEjeCollection = parNucleoEjeCollection;
+    }
+
+    @XmlTransient
+    public Collection<ParNucleoTematico> getParNucleoTematicoCollections() {
+        return parNucleoTematicoCollections;
+    }
+
+    public void setParNucleoTematicoCollections(Collection<ParNucleoTematico> parNucleoTematicoCollections) {
+        this.parNucleoTematicoCollections = parNucleoTematicoCollections;
     }
     
 }
