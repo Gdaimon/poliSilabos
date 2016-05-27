@@ -103,11 +103,9 @@
     <script type="text/javascript" src="../../js/libs/dataTables/datatables.min.js"></script>
     <!-- SweetAlert JavaScript -->
     <script type="text/javascript" src="../../js/libs/bootstrap-sweetalert/sweetalert.min.js"></script>
-    <script src="../../js/models/DepartamentoModel.js"></script>
-    <script src="../../js/models/FacultadModel.js"></script>
-    <script src="../../js/collections/DepartamentoCollection.js"></script>
-    <script src="../../js/collections/FacultadCollection.js"></script>
-    <script src="../../js/views/DepartamentoListView.js"></script>
+    <script src="../../js/models/CompetenciaModel.js"></script>
+    <script src="../../js/collections/CompetenciaCollection.js"></script>
+    <script src="../../js/views/CompetenciaListView.js"></script>
     <script type="text/template" id="user-list-template">
         <div class="container">
             <div class="row">
@@ -163,35 +161,25 @@
                                         <strong>Descripción</strong>
                                     </th>
                                     <th>
-                                        <strong>Facultad</strong>
-                                    </th>
-                                    <th>
-                                        <strong>Ciudad </strong>
-                                    </th>
-
-                                    <th>
                                         <strong>Editar</strong>
                                     </th>
                                 </tr>
                             </thead>
                             <tbody class="text-center">
-                                <% _.each(departamentos, function(depto, i) { %>
+                                <% _.each(competencias, function(compe, i) { %>
                                     <tr class="text-center">
                                         <td>
                                             <%= i+1%>
                                         </td>
                                         <td>
-                                            <%= depto.get('nombreDepartamento') %>
+                                            <%= compe.get('codCompetencia') %>
                                         </td>
                                         <td>
-                                            <%= depto.get('idFacultad').nombreFacultad %>
-                                        </td>
-                                        <td>
-                                            <%= depto.get('ciudadDepartamento') %>
+                                            <%= compe.get('descripcion') %>
                                         </td>
 
                                         <td>
-                                            <button id="<%= depto.get('id') %>" type="button" class="btn btn-default waves-effect waves-light btn-xs" data-toggle="modal" data-target="#myModal">Editar
+                                            <button id="<%= compe.get('id') %>" type="button" class="btn btn-default waves-effect waves-light btn-xs" data-toggle="modal" data-target="#myModal">Editar
                                                 <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true">
                                                 </i>
                                             </button>
@@ -217,7 +205,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Adicionar Departamento</h4>
+                        <h4 class="modal-title">Adicionar Competencia</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -227,17 +215,17 @@
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">account_circle</i>
                                         <input id="inp-depto" type="text" class="validate">
-                                        <label for="inp-depto">Departamento</label>
+                                        <label for="inp-depto">Competencia</label>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-2"></div>
                                     <div class="col-md-8">
-                                        <select class="form-control" id="list-fac">
-                                            <% _.each(facultades, function(fac,i) { %>
-                                                <option value="<%= fac.get('id') %>">
-                                                    <%= fac.get('nombreFacultad') %>
+                                        <select class="form-control" id="list-comp">
+                                            <% _.each(competencias, function(compe,i) { %>
+                                                <option value="<%= compe.get('id') %>">
+                                                    <%= compe.get('id') %>
                                                 </option>
                                                 <% }); %>
                                         </select>
@@ -249,7 +237,7 @@
                                     <div class="input-field col-md-9">
                                         <i class="material-icons prefix">assignment_ind</i>
                                         <input id="inp-ciudad" type="text" class="validate">
-                                        <label for="inp-ciudad">Ciudad</label>
+                                        <label for="inp-ciudad">Descripcion</label>
                                     </div>
                                 </div>
                             </form>
