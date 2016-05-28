@@ -53,8 +53,9 @@ var CompetenciaListView = Backbone.View.extend({
     } else {
       competencia.set({
         "codCompetencia": $("#inp-codCompe").val(),
-        "descripcion": $("#inp-descipcion").val() {
-          "id": parseInt($("#list-fac option:selected").val())
+        "descripcion": $("#inp-descipcion").val(), 
+        "id": {
+        "id": parseInt($("#list-fac option:selected").val())
         }
       });
       console.log(competencia.toJSON());
